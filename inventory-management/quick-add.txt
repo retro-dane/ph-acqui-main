@@ -1,0 +1,53 @@
+🚗 PH AQUI QUICK VEHICLE ADD CHECKLIST
+==========================================
+
+STEP 1: GATHER INFO
+□ Vehicle Make & Model
+□ Year
+□ Mileage
+□ Price
+□ VIN Number
+□ Exterior Color
+□ Interior Color
+□ Condition (Excellent/Good/Fair)
+□ Key Features
+□ Photos (Main + 3-5 gallery images)
+
+STEP 2: CREATE FILE
+□ Copy inventory-template.md
+□ Rename to: make-model-year.md (e.g., honda-civic-2023.md)
+□ Save in: /src/content/inventory/
+
+STEP 3: FILL DETAILS
+□ Update all --- fields at top
+□ Write vehicle overview
+□ List key features
+□ Add Jamaica-specific benefits
+
+STEP 4: ADD PHOTOS
+□ Create folder: /src/images/vehicles/make-model-year/
+□ Add main photo (hero-car.png)
+□ Add gallery photos
+□ Update image paths in file
+
+STEP 5: PUBLISH
+□ Save file
+□ Restart development server
+□ Check inventory page
+
+POPULAR JAMAICA FEATURES TO HIGHLIGHT:
+• Air Conditioning (ESSENTIAL!)
+• Fuel Efficiency
+• Reliability in tropical climate
+• Local parts availability
+• Resale value
+• Ground clearance
+• Cargo space
+
+QUICK REFERENCE PRICES:
+• Compact Cars: $18,000-$25,000
+• Mid-size Sedans: $25,000-$35,000
+• Compact SUVs: $28,000-$40,000
+• Full-size SUVs: $35,000-$50,000+
+
+NEED HELP? Check INVENTORY-MANAGEMENT-GUIDE.md for detailed instructions.
