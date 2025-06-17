@@ -36,10 +36,6 @@ const IndexPage = () => {
             />
             <div className="hero-stats">
               <div className="stat">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Cars Available</span>
-              </div>
-              <div className="stat">
                 <span className="stat-number">4.9★</span>
                 <span className="stat-label">Customer Rating</span>
               </div>

@@ -159,23 +159,8 @@ const ServicesPage = () => {
               <span className="hero-highlight"> Services</span>
             </h1>
             <p>
-              From sales to service, financing to protection – discover our complete suite of 
-              premium automotive solutions designed to exceed your expectations at every touchpoint.
+              Complete automotive solutions designed to exceed your expectations.
             </p>
-            <div className="hero-stats">
-              <div className="stat">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Premium Vehicles</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">15+</span>
-                <span className="stat-label">Years Experience</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">98%</span>
-                <span className="stat-label">Satisfaction Rate</span>
-              </div>
-            </div>
           </div>
           <div className="hero-image">
             <img src={heroCarImage} alt="Premium automotive services" className="hero-img" />
