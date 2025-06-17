@@ -2686,3 +2686,165 @@ jsx-a11y/control-has-associated-label
 
 [2K[1A[2K[Gsuccess Re-building development bundle - 0.079s
 
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.031s
+
+<i> [webpack-dev-middleware] wait until bundle finished: /__original-stack-frame?moduleId=.%2Fsrc%2Fpages%2Fadmin.js%3Fexport%3Ddefault&lineNumber=413&columnNumber=22
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.180s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.028s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.106s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.030s
+
+[2K[1A[2K[Gsuccess write out requires - 0.001s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.164s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.028s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.105s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.023s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.144s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.029s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.093s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.027s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.081s
+

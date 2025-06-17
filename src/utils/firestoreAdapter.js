@@ -57,11 +57,21 @@ export class FirestoreAdapter {
       }
 
       if (vehicleData.id) {
-        // Update existing vehicle
+        // Check if document exists, if not create it
         const docRef = doc(db, this.collectionName, vehicleData.id)
-        await updateDoc(docRef, vehicle)
+        const docSnap = await getDoc(docRef)
         
-        // Get the updated document to return with proper timestamps
+        if (docSnap.exists()) {
+          // Update existing vehicle
+          await updateDoc(docRef, vehicle)
+        } else {
+          // Document doesn't exist, create it
+          vehicle.id = vehicleData.id
+          vehicle.createdAt = now
+          await setDoc(docRef, vehicle)
+        }
+        
+        // Get the document to return with proper timestamps
         const updatedDoc = await getDoc(docRef)
         return {
           id: updatedDoc.id,

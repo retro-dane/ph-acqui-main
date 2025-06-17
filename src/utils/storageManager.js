@@ -81,11 +81,9 @@ class StorageManager {
 
   async executeWithFallback(operation, ...args) {
     let lastError = null
-    console.log(`🔄 Executing ${operation} with ${this.adapters.length} adapters`)
     
     for (const adapter of this.adapters) {
       try {
-        console.log(`🚀 Trying ${operation} on ${adapter.constructor.name}`)
         const result = await adapter[operation](...args)
         console.log(`✅ ${operation} succeeded on ${adapter.constructor.name}`)
         
@@ -135,9 +133,8 @@ class StorageManager {
 
   async saveVehicle(vehicleData) {
     await this.ensureInitialized()
-    console.log('🚗 StorageManager.saveVehicle called with:', vehicleData)
-    console.log('📊 Available adapters:', this.adapters.map(a => a.constructor.name))
-    console.log('🎯 Primary adapter:', this.primaryAdapter?.constructor.name)
+    console.log('🚗 Saving vehicle:', vehicleData.make, vehicleData.model, vehicleData.year)
+    console.log('🎯 Using primary adapter:', this.primaryAdapter?.constructor.name)
     
     const vehicle = {
       ...vehicleData,
