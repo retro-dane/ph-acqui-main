@@ -24,7 +24,7 @@ const CarCard = ({ car }) => {
   return (
     <div className={styles.card}>
       <Link 
-        to={`/inventory${fields?.slug || ''}`} 
+        to={fields?.slug || `/vehicle/${car.id || ''}`} 
         className={styles.cardLink}
       >
         <div className={styles.imageContainer}>

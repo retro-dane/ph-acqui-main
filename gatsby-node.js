@@ -154,3 +154,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// Create dynamic pages for Firebase vehicles
+exports.createPages = async ({ actions }) => {
+  const { createPage } = actions
+  
+  // This creates pages that match /vehicle/[id] pattern
+  // The actual page rendering will be handled by the [id].js file
+  console.log('📄 Dynamic vehicle pages will be handled by /vehicle/[id].js')
+}

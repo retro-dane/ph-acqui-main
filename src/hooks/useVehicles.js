@@ -38,12 +38,34 @@ export const useVehicles = (markdownVehicles = []) => {
     ...markdownVehicles.map(vehicle => ({
       id: vehicle.id,
       source: 'markdown',
+      frontmatter: vehicle.frontmatter,
+      fields: vehicle.fields,
       ...vehicle.frontmatter
     })),
-    // Stored vehicles (from localStorage)
+    // Stored vehicles (from Firebase/localStorage) - format like markdown vehicles
     ...storedVehicles.map(vehicle => ({
       ...vehicle,
-      source: 'stored'
+      source: 'stored',
+      frontmatter: {
+        make: vehicle.make,
+        model: vehicle.model,
+        year: vehicle.year,
+        price: vehicle.price,
+        mileage: vehicle.mileage,
+        condition: vehicle.condition,
+        transmission: vehicle.transmission,
+        fuelType: vehicle.fuelType,
+        drivetrain: vehicle.drivetrain,
+        vin: vehicle.vin,
+        exteriorColor: vehicle.exteriorColor,
+        interiorColor: vehicle.interiorColor,
+        features: vehicle.features,
+        description: vehicle.description,
+        featuredImage: vehicle.featuredImage
+      },
+      fields: {
+        slug: `/vehicle/${vehicle.id}`
+      }
     }))
   ]
 

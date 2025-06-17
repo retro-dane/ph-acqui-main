@@ -2848,3 +2848,161 @@ jsx-a11y/control-has-associated-label
 
 [2K[1A[2K[Gsuccess Re-building development bundle - 0.081s
 
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.024s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.092s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.015s
+
+[2K[1A[2K[Gsuccess write out requires - 0.004s
+
+[2K[1A[2K[Gsuccess Running gatsby-plugin-sharp.IMAGE_PROCESSING jobs - 22.278s - 1/1 0.04/s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.015s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[G
+ ERROR #98124  WEBPACK.DEVELOP
+
+Generating development JavaScript bundle failed
+
+Can't resolve '../../styles/vehicle-detail.css' in
+'/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle'
+
+If you're trying to use a package make sure that
+'../../styles/vehicle-detail.css' is installed. If you're trying to use a local
+file make sure that the path is correct.
+
+File: src/pages/vehicle/[id].js?export=default:10:0
+
+
+[2K[1A[2K[Gfailed Re-building development bundle - 0.087s
+
+[2K[1A[2K[GERROR in ./src/pages/vehicle/[id].js?export=default 10:0-41
+Module not found: Error: Can't resolve '../../styles/vehicle-detail.css' in
+'/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle'
+ @ ./.cache/_this_is_virtual_fs_path_/$virtual/async-requires.js 12:49-174
+ @ ./.cache/app.js 14:0-52 28:87-32:1 31:29-42 34:29-42 28:0-32:2
+
+develop compiled with 1 error
+
+[2K[1A[2K[Gsuccess Writing page-data.json and slice-data.json files to public directory -
+0.006s - 0/1 156.25/s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.019s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.062s
+
+[2K[1A[2K[Gsuccess Writing page-data.json and slice-data.json files to public directory -
+0.002s - 0/1 424.56/s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.016s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.069s
+
+[2K[1A[2K[Gsuccess Writing page-data.json and slice-data.json files to public directory -
+0.004s - 0/1 231.84/s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.015s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.058s
+
+[2K[1A[2K[Gsuccess Writing page-data.json and slice-data.json files to public directory -
+0.002s - 0/1 643.40/s
+
