@@ -40,6 +40,8 @@ const MultiImageUpload = ({
     setError('')
     setUploading(true)
     
+    const imageType = isThumbnail ? 'thumbnail' : 'gallery'
+    
     const uploadPromises = files.map(async (file, index) => {
       const fileId = `file-${Date.now()}-${index}`
       setUploadProgress(prev => ({ ...prev, [fileId]: 0 }))
@@ -48,7 +50,6 @@ const MultiImageUpload = ({
         // Create a unique filename
         const timestamp = Date.now()
         const fileExtension = file.name.split('.').pop()
-        const imageType = isThumbnail ? 'thumbnail' : 'gallery'
         const fileName = `vehicles/${vehicleId}/${imageType}-${timestamp}-${index}.${fileExtension}`
         
         // Create storage reference
