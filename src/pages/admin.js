@@ -150,6 +150,10 @@ const AdminPage = () => {
   const saveVehicleData = async () => {
     const vehicleData = {
       ...formData,
+      // Ensure numeric fields are stored as numbers
+      year: formData.year ? parseInt(formData.year) : null,
+      price: formData.price ? parseInt(formData.price) : null,
+      mileage: formData.mileage ? parseInt(formData.mileage) : null,
       features: selectedFeatures,
       featuredImage: "./hero-car.png",
       galleryImages: ["../../images/vehicles/icon.png"]
@@ -258,10 +262,10 @@ const AdminPage = () => {
               {allVehicles.map(vehicle => (
                 <div key={vehicle.id} className="vehicle-card">
                   <div className="vehicle-info">
-                    <h3>{vehicle.year} {vehicle.make} {vehicle.model}</h3>
-                    <p className="vehicle-price">${parseInt(vehicle.price).toLocaleString()}</p>
+                    <h3>{vehicle.year || 'N/A'} {vehicle.make || 'Unknown'} {vehicle.model || 'Vehicle'}</h3>
+                    <p className="vehicle-price">${vehicle.price && !isNaN(vehicle.price) ? parseInt(vehicle.price).toLocaleString() : 'N/A'}</p>
                     <p className="vehicle-details">
-                      {vehicle.mileage.toLocaleString()} miles • {vehicle.condition}
+                      {vehicle.mileage && !isNaN(vehicle.mileage) ? parseInt(vehicle.mileage).toLocaleString() : 'N/A'} miles • {vehicle.condition || 'Unknown'}
                     </p>
                   </div>
                   <div className="vehicle-actions">
