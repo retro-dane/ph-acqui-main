@@ -5,11 +5,23 @@
   padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
 /* Hero Section */
 .about-hero {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
   color: white;
-  padding: 6rem 2rem;
+  padding: 3rem 1rem;
   position: relative;
   overflow: hidden;
 }
@@ -34,6 +46,33 @@
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-content {
+    gap: 1.5rem;
+  }
+  
+  .about-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
 }
 
 .hero-badge {

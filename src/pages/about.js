@@ -92,23 +92,8 @@ const AboutPage = () => {
               <span className="hero-highlight"> Excellence</span>
             </h1>
             <p>
-              Since 2010, PH Aqui has been redefining the car buying experience with premium service, 
-              transparent pricing, and a commitment to helping every customer find their perfect vehicle.
+              Redefining the car buying experience with premium service and transparent pricing.
             </p>
-            <div className="hero-stats">
-              <div className="stat">
-                <span className="stat-number">15+</span>
-                <span className="stat-label">Years Experience</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">12K+</span>
-                <span className="stat-label">Happy Customers</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">98%</span>
-                <span className="stat-label">Satisfaction Rate</span>
-              </div>
-            </div>
           </div>
           <div className="hero-image">
             <img src={heroCarImage} alt="Premium vehicles at PH Aqui" className="hero-img" />
