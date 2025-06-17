@@ -1,7 +1,6 @@
 // Unified storage manager with fallback support and synchronization
 
 import { LocalStorageAdapter, FileAdapter, APIAdapter } from './storageAdapters'
-import { FirestoreAdapter } from './firestoreAdapter'
 
 class StorageManager {
   constructor() {
@@ -10,31 +9,42 @@ class StorageManager {
     this.fallbackAdapter = null
     this.syncEnabled = true
     this.lastSync = null
+    this.initialized = false
     
     this.initializeAdapters()
   }
 
-  initializeAdapters() {
+  async initializeAdapters() {
     // Always have localStorage as fallback
     this.fallbackAdapter = new LocalStorageAdapter()
     
     // Try to determine the best primary adapter based on environment
-    this.setupPrimaryAdapter()
+    await this.setupPrimaryAdapter()
     
     // Setup sync interval
     this.setupSync()
+    
+    this.initialized = true
+    console.log('🚀 StorageManager initialized with adapters:', this.adapters.map(a => a.constructor.name))
   }
 
-  setupPrimaryAdapter() {
-    // Try Firebase Firestore first
-    try {
-      console.log('Attempting to initialize Firestore adapter')
-      this.primaryAdapter = new FirestoreAdapter()
-      this.adapters = [this.primaryAdapter, this.fallbackAdapter]
-      console.log('Using Firestore as primary storage')
-      return
-    } catch (error) {
-      console.log('Firestore not available, trying other options:', error.message)
+  async setupPrimaryAdapter() {
+    // Try Firebase Firestore first (browser only)
+    if (typeof window !== 'undefined') {
+      try {
+        console.log('🔥 Attempting to initialize Firestore adapter')
+        // Dynamically import Firebase adapter to avoid SSR issues
+        const { FirestoreAdapter } = await import('./firestoreAdapter')
+        this.primaryAdapter = new FirestoreAdapter()
+        this.adapters = [this.primaryAdapter, this.fallbackAdapter]
+        console.log('✅ Using Firestore as primary storage')
+        return
+      } catch (error) {
+        console.warn('⚠️ Firestore not available, trying other options:', error.message)
+        console.warn('Error details:', error)
+      }
+    } else {
+      console.log('🖥️ Server-side rendering detected, skipping Firestore')
     }
 
     // Check for API configuration in environment variables
@@ -71,10 +81,13 @@ class StorageManager {
 
   async executeWithFallback(operation, ...args) {
     let lastError = null
+    console.log(`🔄 Executing ${operation} with ${this.adapters.length} adapters`)
     
     for (const adapter of this.adapters) {
       try {
+        console.log(`🚀 Trying ${operation} on ${adapter.constructor.name}`)
         const result = await adapter[operation](...args)
+        console.log(`✅ ${operation} succeeded on ${adapter.constructor.name}`)
         
         // If this is not the primary adapter, sync the data
         if (adapter !== this.primaryAdapter && this.syncEnabled) {
@@ -83,7 +96,7 @@ class StorageManager {
         
         return result
       } catch (error) {
-        console.warn(`${operation} failed on ${adapter.constructor.name}:`, error)
+        console.warn(`❌ ${operation} failed on ${adapter.constructor.name}:`, error.message)
         lastError = error
         continue
       }
@@ -92,7 +105,26 @@ class StorageManager {
     throw lastError || new Error(`All storage adapters failed for operation: ${operation}`)
   }
 
+  async ensureInitialized() {
+    if (!this.initialized) {
+      console.log('⏳ Waiting for StorageManager initialization...')
+      // Wait a bit for async initialization to complete
+      let attempts = 0
+      while (!this.initialized && attempts < 50) {
+        await new Promise(resolve => setTimeout(resolve, 100))
+        attempts++
+      }
+      if (!this.initialized) {
+        console.warn('⚠️ StorageManager initialization timeout, using fallback only')
+        this.adapters = [this.fallbackAdapter]
+        this.primaryAdapter = this.fallbackAdapter
+        this.initialized = true
+      }
+    }
+  }
+
   async getVehicles() {
+    await this.ensureInitialized()
     try {
       return await this.executeWithFallback('getVehicles')
     } catch (error) {
@@ -102,6 +134,11 @@ class StorageManager {
   }
 
   async saveVehicle(vehicleData) {
+    await this.ensureInitialized()
+    console.log('🚗 StorageManager.saveVehicle called with:', vehicleData)
+    console.log('📊 Available adapters:', this.adapters.map(a => a.constructor.name))
+    console.log('🎯 Primary adapter:', this.primaryAdapter?.constructor.name)
+    
     const vehicle = {
       ...vehicleData,
       id: vehicleData.id || this.generateId(vehicleData),
@@ -112,6 +149,7 @@ class StorageManager {
 
     try {
       const result = await this.executeWithFallback('saveVehicle', vehicle)
+      console.log('✅ Vehicle saved successfully:', result)
       
       // Trigger sync to other adapters
       if (this.adapters.length > 1) {
@@ -120,12 +158,13 @@ class StorageManager {
       
       return result
     } catch (error) {
-      console.error('Failed to save vehicle to all adapters:', error)
+      console.error('❌ Failed to save vehicle to all adapters:', error)
       throw error
     }
   }
 
   async deleteVehicle(id) {
+    await this.ensureInitialized()
     try {
       const result = await this.executeWithFallback('deleteVehicle', id)
       
@@ -258,6 +297,7 @@ class StorageManager {
 
   // Status and monitoring
   async getStorageStatus() {
+    await this.ensureInitialized()
     const adapters = []
     
     for (const adapter of this.adapters) {

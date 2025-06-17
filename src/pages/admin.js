@@ -210,7 +210,7 @@ const AdminPage = () => {
           <h1>🚗 PH Aqui Admin Dashboard</h1>
           <p>Manage your vehicle inventory with ease</p>
           
-          {storageStatus && (
+          {storageStatus && storageStatus.adapters && (
             <div className="storage-status">
               <h3>📡 Storage Status</h3>
               <div className="storage-adapters">
@@ -237,6 +237,11 @@ const AdminPage = () => {
               {storageStatus.lastSync && (
                 <p className="last-sync">
                   🔄 Last sync: {new Date(storageStatus.lastSync).toLocaleString()}
+                </p>
+              )}
+              {!storageStatus.lastSync && (
+                <p className="last-sync">
+                  🔄 No sync performed yet
                 </p>
               )}
               <p className="sync-status">

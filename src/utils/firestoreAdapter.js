@@ -16,6 +16,9 @@ import { db } from './firebase'
 
 export class FirestoreAdapter {
   constructor() {
+    if (!db) {
+      throw new Error('Firebase not initialized')
+    }
     this.collectionName = 'vehicles'
     this.collection = collection(db, this.collectionName)
   }

@@ -12,14 +12,19 @@ const firebaseConfig = {
   measurementId: "G-4LRHYCVK8F"
 }
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig)
+// Initialize Firebase (browser only)
+let app, db
 
-// Initialize Firestore
-const db = getFirestore(app)
+if (typeof window !== 'undefined') {
+  app = initializeApp(firebaseConfig)
+  db = getFirestore(app)
+} else {
+  app = null
+  db = null
+}
 
 // Connect to Firestore emulator in development if available
-if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+if (typeof window !== 'undefined' && db && window.location.hostname === 'localhost') {
   try {
     // Only connect to emulator if not already connected
     if (!db._delegate._databaseId?.database?.includes('emulator')) {
