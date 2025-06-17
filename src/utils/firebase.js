@@ -1,6 +1,7 @@
 // Firebase configuration and initialization
 import { initializeApp } from 'firebase/app'
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
+import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: "AIzaSyC2w4RRZjVHpSpricqM_X4T8glMkMSL674",
@@ -13,14 +14,16 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase (browser only)
-let app, db
+let app, db, storage
 
 if (typeof window !== 'undefined') {
   app = initializeApp(firebaseConfig)
   db = getFirestore(app)
+  storage = getStorage(app)
 } else {
   app = null
   db = null
+  storage = null
 }
 
 // Connect to Firestore emulator in development if available
@@ -37,5 +40,5 @@ if (typeof window !== 'undefined' && db && window.location.hostname === 'localho
   }
 }
 
-export { db }
+export { db, storage }
 export default app

@@ -72,8 +72,12 @@ const VehicleDetailPage = ({ params }) => {
     exteriorColor = 'Unknown',
     interiorColor = 'Unknown',
     features = [],
-    description = 'No description available.'
+    description = 'No description available.',
+    featuredImage = null
   } = vehicle
+
+  // Use uploaded image if available, otherwise fallback to default
+  const vehicleImage = featuredImage && featuredImage.includes('firebase') ? featuredImage : heroCarImage
 
   return (
     <Layout pageTitle={`${year} ${make} ${model}`}>
@@ -86,7 +90,7 @@ const VehicleDetailPage = ({ params }) => {
           <div className="vehicle-images">
             <div className="main-image">
               <img 
-                src={heroCarImage} 
+                src={vehicleImage} 
                 alt={`${year} ${make} ${model}`}
                 className="vehicle-main-image"
               />

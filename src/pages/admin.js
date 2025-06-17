@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
 import AdminAuth from '../components/AdminAuth'
+import ImageUpload from '../components/ImageUpload'
 import storageManager from '../utils/storageManager'
 import '../styles/admin.css'
 
@@ -51,6 +52,8 @@ const AdminPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
   const [storageStatus, setStorageStatus] = useState(null)
+  const [uploadedImageUrl, setUploadedImageUrl] = useState('')
+  const [uploadedImagePath, setUploadedImagePath] = useState('')
 
   // Load stored vehicles on component mount
   useEffect(() => {
@@ -144,7 +147,14 @@ const AdminPage = () => {
       features: vehicle.features || []
     })
     setSelectedFeatures(vehicle.features || [])
+    setUploadedImageUrl(vehicle.featuredImage || '')
+    setUploadedImagePath('')
     setSubmitMessage('')
+  }
+
+  const handleImageUploaded = (imageUrl, imagePath) => {
+    setUploadedImageUrl(imageUrl)
+    setUploadedImagePath(imagePath)
   }
 
   const saveVehicleData = async () => {
@@ -155,8 +165,9 @@ const AdminPage = () => {
       price: formData.price ? parseInt(formData.price) : null,
       mileage: formData.mileage ? parseInt(formData.mileage) : null,
       features: selectedFeatures,
-      featuredImage: "./hero-car.png",
-      galleryImages: ["../../images/vehicles/icon.png"]
+      featuredImage: uploadedImageUrl || "./hero-car.png",
+      imagePath: uploadedImagePath || '',
+      galleryImages: uploadedImageUrl ? [uploadedImageUrl] : ["../../images/vehicles/icon.png"]
     }
     
     return await storageManager.saveVehicle(vehicleData)
@@ -198,6 +209,9 @@ const AdminPage = () => {
         description: ''
       })
       setSelectedFeatures([])
+      setUploadedImageUrl('')
+      setUploadedImagePath('')
+      setEditingVehicle(null)
       
     } catch (error) {
       setSubmitMessage(`❌ Error saving vehicle: ${error.message}`)
@@ -310,6 +324,16 @@ const AdminPage = () => {
         )}
 
         <form onSubmit={handleSubmit} className="vehicle-form">
+          <div className="form-section">
+            <h2>Vehicle Image</h2>
+            <ImageUpload
+              onImageUploaded={handleImageUploaded}
+              currentImage={uploadedImageUrl}
+              vehicleId={editingVehicle?.id || `temp-${Date.now()}`}
+              label="Featured Vehicle Image"
+            />
+          </div>
+
           <div className="form-section">
             <h2>Basic Information</h2>
             <div className="form-row">
