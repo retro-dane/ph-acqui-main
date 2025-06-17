@@ -63,6 +63,9 @@ export const useVehicles = (markdownVehicles = []) => {
         description: vehicle.description,
         featuredImage: vehicle.featuredImage
       },
+      // Keep image arrays at the top level for easy access
+      thumbnailImages: vehicle.thumbnailImages,
+      galleryImages: vehicle.galleryImages,
       fields: {
         slug: `/vehicle/${vehicle.id}`
       }

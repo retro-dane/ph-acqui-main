@@ -5,11 +5,16 @@ import CarPlaceholder from "../CarPlaceholder"
 import * as styles from "./carCard.module.css"
 
 const CarCard = ({ car }) => {
+  // Early return if no car data
+  if (!car) {
+    return null
+  }
+
   // Safely destructure with fallbacks
   const { 
     frontmatter = {}, 
     fields = {} 
-  } = car || {}
+  } = car
 
   const { 
     make = 'Unknown Make', 
@@ -23,8 +28,9 @@ const CarCard = ({ car }) => {
   const imageData = featuredImage?.childImageSharp?.gatsbyImageData || null
   
   // Check for images in priority order: thumbnail > featured > default
-  const thumbnailImage = car.thumbnailImages && car.thumbnailImages.length > 0 ? car.thumbnailImages[0].url : null
-  const firebaseImageUrl = thumbnailImage || (car.featuredImage && car.featuredImage.includes('firebase') ? car.featuredImage : null)
+  const thumbnailImage = car?.thumbnailImages && car.thumbnailImages.length > 0 ? car.thumbnailImages[0]?.url : null
+  const featuredImageUrl = car?.featuredImage && typeof car.featuredImage === 'string' && car.featuredImage.includes('firebase') ? car.featuredImage : null
+  const firebaseImageUrl = thumbnailImage || featuredImageUrl
 
   return (
     <div className={styles.card}>
