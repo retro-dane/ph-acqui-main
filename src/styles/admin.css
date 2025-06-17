@@ -609,6 +609,126 @@
   font-size: 0.9rem;
 }
 
+/* Car Placeholder */
+.car-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  min-height: 150px;
+}
+
+.car-placeholder svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Multi Image Upload Styles */
+.multi-image-upload-container {
+  margin-bottom: 20px;
+}
+
+.current-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.image-grid-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.image-grid-item:hover {
+  transform: scale(1.02);
+}
+
+.grid-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.image-grid-item:hover .image-grid-overlay {
+  opacity: 1;
+}
+
+.btn-remove-grid-image {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-remove-grid-image:hover {
+  background: #c53030;
+}
+
+.primary-badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #667eea;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.upload-placeholder {
+  text-align: center;
+  color: #6b7280;
+}
+
+.upload-placeholder p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.upload-placeholder small {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .admin-container {
@@ -640,6 +760,16 @@
   .btn-remove-image {
     padding: 10px 20px;
     font-size: 1rem;
+  }
+  
+  .current-images-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .image-grid-overlay {
+    opacity: 1;
   }
 }
 

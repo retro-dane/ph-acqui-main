@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import CarPlaceholder from "../CarPlaceholder"
 import * as styles from "./carCard.module.css"
 
 const CarCard = ({ car }) => {
@@ -20,6 +21,10 @@ const CarCard = ({ car }) => {
 
   // Handle missing image data
   const imageData = featuredImage?.childImageSharp?.gatsbyImageData || null
+  
+  // Check for images in priority order: thumbnail > featured > default
+  const thumbnailImage = car.thumbnailImages && car.thumbnailImages.length > 0 ? car.thumbnailImages[0].url : null
+  const firebaseImageUrl = thumbnailImage || (car.featuredImage && car.featuredImage.includes('firebase') ? car.featuredImage : null)
 
   return (
     <div className={styles.card}>
@@ -28,16 +33,23 @@ const CarCard = ({ car }) => {
         className={styles.cardLink}
       >
         <div className={styles.imageContainer}>
-          {imageData ? (
+          {firebaseImageUrl ? (
+            <img
+              src={firebaseImageUrl}
+              alt={`${year} ${make} ${model}`}
+              className={styles.carImage}
+            />
+          ) : imageData ? (
             <GatsbyImage
               image={imageData}
               alt={`${year} ${make} ${model}`}
               className={styles.carImage}
             />
           ) : (
-            <div className={styles.imagePlaceholder}>
-              Image not available
-            </div>
+            <CarPlaceholder
+              className={styles.imagePlaceholder}
+              alt={`${year} ${make} ${model}`}
+            />
           )}
         </div>
         <div className={styles.cardBody}>

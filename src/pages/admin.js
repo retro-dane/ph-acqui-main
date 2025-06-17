@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
 import AdminAuth from '../components/AdminAuth'
 import ImageUpload from '../components/ImageUpload'
+import MultiImageUpload from '../components/MultiImageUpload'
 import storageManager from '../utils/storageManager'
 import '../styles/admin.css'
 
@@ -54,6 +55,8 @@ const AdminPage = () => {
   const [storageStatus, setStorageStatus] = useState(null)
   const [uploadedImageUrl, setUploadedImageUrl] = useState('')
   const [uploadedImagePath, setUploadedImagePath] = useState('')
+  const [thumbnailImages, setThumbnailImages] = useState([])
+  const [galleryImages, setGalleryImages] = useState([])
 
   // Load stored vehicles on component mount
   useEffect(() => {
@@ -149,12 +152,22 @@ const AdminPage = () => {
     setSelectedFeatures(vehicle.features || [])
     setUploadedImageUrl(vehicle.featuredImage || '')
     setUploadedImagePath('')
+    setThumbnailImages(vehicle.thumbnailImages || [])
+    setGalleryImages(vehicle.galleryImages || [])
     setSubmitMessage('')
   }
 
   const handleImageUploaded = (imageUrl, imagePath) => {
     setUploadedImageUrl(imageUrl)
     setUploadedImagePath(imagePath)
+  }
+
+  const handleThumbnailImagesUploaded = (images) => {
+    setThumbnailImages(images)
+  }
+
+  const handleGalleryImagesUploaded = (images) => {
+    setGalleryImages(images)
   }
 
   const saveVehicleData = async () => {
@@ -165,9 +178,10 @@ const AdminPage = () => {
       price: formData.price ? parseInt(formData.price) : null,
       mileage: formData.mileage ? parseInt(formData.mileage) : null,
       features: selectedFeatures,
-      featuredImage: uploadedImageUrl || "./hero-car.png",
+      featuredImage: uploadedImageUrl || (thumbnailImages.length > 0 ? thumbnailImages[0].url : "./hero-car.png"),
       imagePath: uploadedImagePath || '',
-      galleryImages: uploadedImageUrl ? [uploadedImageUrl] : ["../../images/vehicles/icon.png"]
+      thumbnailImages: thumbnailImages,
+      galleryImages: galleryImages
     }
     
     return await storageManager.saveVehicle(vehicleData)
@@ -211,6 +225,8 @@ const AdminPage = () => {
       setSelectedFeatures([])
       setUploadedImageUrl('')
       setUploadedImagePath('')
+      setThumbnailImages([])
+      setGalleryImages([])
       setEditingVehicle(null)
       
     } catch (error) {
@@ -325,12 +341,24 @@ const AdminPage = () => {
 
         <form onSubmit={handleSubmit} className="vehicle-form">
           <div className="form-section">
-            <h2>Vehicle Image</h2>
-            <ImageUpload
-              onImageUploaded={handleImageUploaded}
-              currentImage={uploadedImageUrl}
+            <h2>Vehicle Images</h2>
+            
+            <MultiImageUpload
+              onImagesUploaded={handleThumbnailImagesUploaded}
+              currentImages={thumbnailImages}
               vehicleId={editingVehicle?.id || `temp-${Date.now()}`}
-              label="Featured Vehicle Image"
+              label="Main Thumbnail Image"
+              maxImages={1}
+              isThumbnail={true}
+            />
+            
+            <MultiImageUpload
+              onImagesUploaded={handleGalleryImagesUploaded}
+              currentImages={galleryImages}
+              vehicleId={editingVehicle?.id || `temp-${Date.now()}`}
+              label="Additional Gallery Images"
+              maxImages={6}
+              isThumbnail={false}
             />
           </div>
 

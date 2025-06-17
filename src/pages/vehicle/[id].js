@@ -73,11 +73,18 @@ const VehicleDetailPage = ({ params }) => {
     interiorColor = 'Unknown',
     features = [],
     description = 'No description available.',
-    featuredImage = null
+    featuredImage = null,
+    thumbnailImages = [],
+    galleryImages = []
   } = vehicle
 
   // Use uploaded image if available, otherwise fallback to default
-  const vehicleImage = featuredImage && featuredImage.includes('firebase') ? featuredImage : heroCarImage
+  const mainImage = thumbnailImages.length > 0 
+    ? thumbnailImages[0].url 
+    : (featuredImage && featuredImage.includes('firebase') ? featuredImage : heroCarImage)
+  
+  // All images for gallery (thumbnail + gallery images)
+  const allImages = [...thumbnailImages, ...galleryImages]
 
   return (
     <Layout pageTitle={`${year} ${make} ${model}`}>
@@ -90,11 +97,28 @@ const VehicleDetailPage = ({ params }) => {
           <div className="vehicle-images">
             <div className="main-image">
               <img 
-                src={vehicleImage} 
+                src={mainImage} 
                 alt={`${year} ${make} ${model}`}
                 className="vehicle-main-image"
               />
             </div>
+            
+            {allImages.length > 1 && (
+              <div className="image-gallery">
+                <h3>More Photos</h3>
+                <div className="gallery-grid">
+                  {allImages.map((image, index) => (
+                    <div key={index} className="gallery-item">
+                      <img 
+                        src={image.url} 
+                        alt={`${year} ${make} ${model} - Photo ${index + 1}`}
+                        className="gallery-image"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="vehicle-info">
