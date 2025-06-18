@@ -3,6 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
+import FeaturedCars from "../components/FeaturedCars"
 import "../styles/index.css"
 import heroCarImage from "../images/hero-car.png"
 
@@ -252,122 +253,7 @@ const IndexPage = () => {
       </section>
 
       {/* Featured Cars Section */}
-      <section className="featured-cars">
-        <div className="container">
-          <div className="section-header">
-            <h2>Featured Cars</h2>
-            <p>Discover our handpicked selection of premium vehicles</p>
-          </div>
-          <div className="cars-container">
-            <div className="cars-scroll">
-              <div className="car-card">
-                <div className="car-image">
-                  <img src={heroCarImage} alt="2024 Honda Accord" />
-                  <div className="car-badge">Featured</div>
-                </div>
-                <div className="car-info">
-                  <h3>2024 Honda Accord</h3>
-                  <p className="car-year">2024 • Sedan • Automatic</p>
-                  <div className="car-features">
-                    <span>Apple CarPlay</span>
-                    <span>Backup Camera</span>
-                    <span>Bluetooth</span>
-                  </div>
-                  <div className="car-price">
-                    <span className="price">$28,995</span>
-                    <span className="monthly">$459/mo</span>
-                  </div>
-                  <button className="car-cta">View Details</button>
-                </div>
-              </div>
-
-              <div className="car-card">
-                <div className="car-image">
-                  <img src={heroCarImage} alt="2023 Toyota Camry" />
-                  <div className="car-badge">Popular</div>
-                </div>
-                <div className="car-info">
-                  <h3>2023 Toyota Camry</h3>
-                  <p className="car-year">2023 • Sedan • CVT</p>
-                  <div className="car-features">
-                    <span>Lane Assist</span>
-                    <span>Adaptive Cruise</span>
-                    <span>Heated Seats</span>
-                  </div>
-                  <div className="car-price">
-                    <span className="price">$26,500</span>
-                    <span className="monthly">$425/mo</span>
-                  </div>
-                  <button className="car-cta">View Details</button>
-                </div>
-              </div>
-
-              <div className="car-card">
-                <div className="car-image">
-                  <img src={heroCarImage} alt="2024 Nissan Altima" />
-                  <div className="car-badge">New</div>
-                </div>
-                <div className="car-info">
-                  <h3>2024 Nissan Altima</h3>
-                  <p className="car-year">2024 • Sedan • CVT</p>
-                  <div className="car-features">
-                    <span>ProPILOT</span>
-                    <span>Wireless Charging</span>
-                    <span>Remote Start</span>
-                  </div>
-                  <div className="car-price">
-                    <span className="price">$27,200</span>
-                    <span className="monthly">$439/mo</span>
-                  </div>
-                  <button className="car-cta">View Details</button>
-                </div>
-              </div>
-
-              <div className="car-card">
-                <div className="car-image">
-                  <img src={heroCarImage} alt="2023 Hyundai Elantra" />
-                  <div className="car-badge">Best Value</div>
-                </div>
-                <div className="car-info">
-                  <h3>2023 Hyundai Elantra</h3>
-                  <p className="car-year">2023 • Sedan • Automatic</p>
-                  <div className="car-features">
-                    <span>SmartSense</span>
-                    <span>Wireless CarPlay</span>
-                    <span>LED Headlights</span>
-                  </div>
-                  <div className="car-price">
-                    <span className="price">$24,800</span>
-                    <span className="monthly">$399/mo</span>
-                  </div>
-                  <button className="car-cta">View Details</button>
-                </div>
-              </div>
-
-              <div className="car-card">
-                <div className="car-image">
-                  <img src={heroCarImage} alt="2024 Mazda6" />
-                  <div className="car-badge">Luxury</div>
-                </div>
-                <div className="car-info">
-                  <h3>2024 Mazda6</h3>
-                  <p className="car-year">2024 • Sedan • Automatic</p>
-                  <div className="car-features">
-                    <span>Premium Audio</span>
-                    <span>Leather Interior</span>
-                    <span>Sunroof</span>
-                  </div>
-                  <div className="car-price">
-                    <span className="price">$31,500</span>
-                    <span className="monthly">$509/mo</span>
-                  </div>
-                  <button className="car-cta">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FeaturedCars />
     </Layout>
   )
 }

@@ -293,7 +293,7 @@ const AdminPage = () => {
                 <div key={vehicle.id} className="vehicle-card">
                   <div className="vehicle-info">
                     <h3>{vehicle.year || 'N/A'} {vehicle.make || 'Unknown'} {vehicle.model || 'Vehicle'}</h3>
-                    <p className="vehicle-price">${vehicle.price && !isNaN(vehicle.price) ? parseInt(vehicle.price).toLocaleString() : 'N/A'}</p>
+                    <p className="vehicle-price">J${vehicle.price && !isNaN(vehicle.price) ? parseInt(vehicle.price).toLocaleString() : 'N/A'}</p>
                     <p className="vehicle-details">
                       {vehicle.mileage && !isNaN(vehicle.mileage) ? parseInt(vehicle.mileage).toLocaleString() : 'N/A'} miles • {vehicle.condition || 'Unknown'}
                     </p>
@@ -406,7 +406,7 @@ const AdminPage = () => {
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="price">Price (USD) *</label>
+                <label htmlFor="price">Price (JMD) *</label>
                 <input
                   type="number"
                   id="price"

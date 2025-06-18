@@ -4851,3 +4851,1597 @@ jsx-a11y/img-redundant-alt
 
 [2K[1A[2K[Gsuccess Re-building development bundle - 0.076s
 
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.029s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.081s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.029s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.066s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.025s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.132s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.016s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.098s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.015s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.089s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.013s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.052s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.014s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.061s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.014s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.096s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.017s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.050s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.014s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.049s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.018s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.050s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.024s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.068s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.002s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.043s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.164s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.003s
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "featuredImage" of type "File" must have a selection of subfields. Did you
+ mean "featuredImage { ... }"?
+
+File: src/components/FeaturedCars.js:24:13
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "featuredImage" of type "File" must have a selection of su[0m
+  [0m[97m[41mbfields. Did you mean "featuredImage { ... }"?[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gfailed extract queries from components - 0.050s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 11 problems (0 errors, 11 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.043s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "featuredImage" of type "File" must have a selection of subfields. Did you
+ mean "featuredImage { ... }"?
+
+File: src/components/FeaturedCars.js:24:13
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "featuredImage" of type "File" must have a selection of su[0m
+  [0m[97m[41mbfields. Did you mean "featuredImage { ... }"?[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gfailed extract queries from components - 0.033s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used   no-unused-vars
+  6:8   warning  'FeaturedCars' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 14 problems (0 errors, 14 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.214s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "featuredImage" of type "File" must have a selection of subfields. Did you
+ mean "featuredImage { ... }"?
+
+File: src/components/FeaturedCars.js:24:13
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "featuredImage" of type "File" must have a selection of su[0m
+  [0m[97m[41mbfields. Did you mean "featuredImage { ... }"?[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gfailed extract queries from components - 0.028s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 13 problems (0 errors, 13 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.082s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "featuredImage" of type "File" must have a selection of subfields. Did you
+ mean "featuredImage { ... }"?
+
+File: src/components/FeaturedCars.js:24:13
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "featuredImage" of type "File" must have a selection of su[0m
+  [0m[97m[41mbfields. Did you mean "featuredImage { ... }"?[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gfailed extract queries from components - 0.019s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 13 problems (0 errors, 13 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.092s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "featuredImage" of type "File" must have a selection of subfields. Did you
+ mean "featuredImage { ... }"?
+
+File: src/components/FeaturedCars.js:24:13
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "featuredImage" of type "File" must have a selection of su[0m
+  [0m[97m[41mbfields. Did you mean "featuredImage { ... }"?[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gfailed extract queries from components - 0.019s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 13 problems (0 errors, 13 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.050s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.031s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 13 problems (0 errors, 13 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.080s
+
+[2K[1A[2K[Gsuccess Writing page-data.json and slice-data.json files to public directory -
+0.003s - 1/1 348.29/s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.020s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 13 problems (0 errors, 13 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.112s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.020s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 13 problems (0 errors, 13 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.071s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.002s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.038s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+
+[2K[1A[2K[Gwarn /Users/khadanehood/StudioProjects/ph-aqui-main/src/components/AdminAuth.js
+  197:15  warning  A form label must be associated with a control
+jsx-a11y/label-has-associated-control
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/FeaturedCars.js
+  159:21  warning  'fuelType' is assigned a value but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/ImageUpload.js
+  115:11  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  115:11  warning  Avoid non-native interactive elements. If using native HTML
+is not possible, add an appropriate role and support for tabbing, mouse,
+keyboard, and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/components/MultiImageUpload.j
+s
+  164:9  warning  Visible, non-interactive elements with click handlers must
+have at least one keyboard listener
+
+jsx-a11y/click-events-have-key-events
+  164:9  warning  Avoid non-native interactive elements. If using native HTML is
+ not possible, add an appropriate role and support for tabbing, mouse, keyboard,
+ and touch inputs to an interactive content element
+jsx-a11y/no-static-element-interactions
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/admin.js
+    5:8  warning  'ImageUpload' is defined but never used
+no-unused-vars
+  160:9  warning  'handleImageUploaded' is assigned a value but never used
+no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/index.js
+  5:10  warning  'StaticImage' is defined but never used  no-unused-vars
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/inventory.js
+  160:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+  168:19  warning  A control must be associated with a text label
+jsx-a11y/control-has-associated-label
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/pages/vehicle/[id].js
+  112:23  warning  Redundant alt attribute. Screen-readers already announce
+`img` tags as an image. You don’t need to use the words `image`, `photo,` or
+`picture` (or any specified custom words) in the alt prop
+jsx-a11y/img-redundant-alt
+
+/Users/khadanehood/StudioProjects/ph-aqui-main/src/utils/firestoreAdapter.js
+  7:3  warning  'addDoc' is defined but never used  no-unused-vars
+
+✖ 13 problems (0 errors, 13 warnings)
+
+[2K[1A[2K[Gsuccess Re-building development bundle - 0.100s
+
+[2K[1A[2K[Ginfo deleted file at /Users/khadanehood/StudioProjects/ph-aqui-main/src/content/
+inventory/toyota-camry.md
+
+[2K[1A[2K[Gsuccess building schema - 0.058s
+
+[2K[1A[2K[Gsuccess createPages - 0.001s
+
+[2K[1A[2K[Ginfo Total nodes: 43, SitePage nodes: 10 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "fileAbsolutePath" is not defined by type "MarkdownRemarkFilterInput".
+
+File: src/components/FeaturedCars.js:11:19
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "fileAbsolutePath" is not defined by type "MarkdownRemarkF[0m
+  [0m[97m[41milterInput".[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "fileAbsolutePath" is not defined by type "MarkdownRemarkFilterInput".
+
+File: src/pages/admin.js:14:19
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "fileAbsolutePath" is not defined by type "MarkdownRemarkF[0m
+  [0m[97m[41milterInput".[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "fileAbsolutePath" is not defined by type "MarkdownRemarkFilterInput".
+
+File: src/pages/inventory.js:223:16
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "fileAbsolutePath" is not defined by type "MarkdownRemarkF[0m
+  [0m[97m[41milterInput".[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[G
+ ERROR #85901  GRAPHQL.UNKNOWN
+
+There was an error in your GraphQL query:
+
+Field "frontmatter" is not defined by type "MarkdownRemarkSortInput".
+
+File: src/pages/inventory.js:224:14
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mGraphQLError[0m[37m[41m:[0m[37m[41m [0m[97m[41mField "frontmatter" is not defined by type "MarkdownRemarkSortIn[0m
+  [0m[97m[41mput".[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m179[0m[37m [0m[37mextractOperations[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:179:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m153[0m[37m [0m[37mprocessQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:153:7[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-compiler.js[0m[90m:[0m[93m78[0m[37m [0m[37mcompile[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-compiler.js:78:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mquery-watcher.js[0m[90m:[0m[93m174[0m[37m [0m[37masync updateStateAndRunQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/query/query-watcher.js:174:19[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mextract-queries.js[0m[90m:[0m[93m20[0m[37m [0m[37masync extractQueries[0m
+[0m  [0m  [0m[90m[ph-aqui-main]/[gatsby]/dist/services/extract-queries.js:20:3[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gfailed extract queries from components - 0.028s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+

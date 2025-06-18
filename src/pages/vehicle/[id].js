@@ -127,7 +127,7 @@ const VehicleDetailPage = ({ params }) => {
                 {year} {make} {model}
               </h1>
               <p className="vehicle-price">
-                ${price && !isNaN(price) ? parseInt(price).toLocaleString() : 'Contact for price'}
+                J${price && !isNaN(price) ? parseInt(price).toLocaleString() : 'Contact for price'}
               </p>
             </div>
 

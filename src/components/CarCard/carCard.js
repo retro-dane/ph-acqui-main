@@ -63,7 +63,7 @@ const CarCard = ({ car }) => {
             {year} {make} {model}
           </h3>
           <p className={styles.carPrice}>
-            ${typeof price === 'number' ? price.toLocaleString() : '0'}
+            J${typeof price === 'number' ? price.toLocaleString() : '0'}
           </p>
           <div className={styles.cardFooter}>
             <span className={styles.detailsLink}>View Details →</span>

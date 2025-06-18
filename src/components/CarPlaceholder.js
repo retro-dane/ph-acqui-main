@@ -87,9 +87,9 @@ const CarPlaceholder = ({ className = '', alt = 'Vehicle placeholder' }) => {
           stroke="#d1d5db"
           strokeWidth="1"
         />
-        <rect x="352" y="147" width="6" height="3" fill="#60a5fa" rx="1"/>
-        <rect x="352" y="152" width="6" height="3" fill="#60a5fa" rx="1"/>
-        <rect x="352" y="157" width="6" height="3" fill="#60a5fa" rx="1"/>
+        <rect x="352" y="147" width="6" height="3" fill="#0ea5e9" rx="1"/>
+        <rect x="352" y="152" width="6" height="3" fill="#0ea5e9" rx="1"/>
+        <rect x="352" y="157" width="6" height="3" fill="#0ea5e9" rx="1"/>
         
         {/* Grille - Aggressive mesh pattern */}
         <rect x="340" y="140" width="10" height="25" fill="#111827" stroke="#000000" strokeWidth="1"/>
