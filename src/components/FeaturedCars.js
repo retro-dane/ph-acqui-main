@@ -7,9 +7,7 @@ const FeaturedCars = () => {
   // Get markdown vehicles from GraphQL
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/inventory/" } }
-      ) {
+      allMarkdownRemark {
         nodes {
           id
           frontmatter {

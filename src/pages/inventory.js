@@ -219,10 +219,7 @@ const InventoryPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/inventory/"}}
-      sort: {frontmatter: {year: DESC}}
-    ) {
+    allMarkdownRemark {
       nodes {
         id
         frontmatter {
@@ -236,7 +233,7 @@ export const query = graphql`
                 width: 400
                 height: 250
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

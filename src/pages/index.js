@@ -2,7 +2,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
-import { StaticImage } from "gatsby-plugin-image"
 import FeaturedCars from "../components/FeaturedCars"
 import "../styles/index.css"
 import heroCarImage from "../images/hero-car.png"

@@ -10,9 +10,7 @@ import '../styles/admin.css'
 const AdminPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/inventory/" } }
-      ) {
+      allMarkdownRemark {
         nodes {
           id
           frontmatter {
@@ -23,7 +21,6 @@ const AdminPage = () => {
             mileage
             condition
           }
-          fileAbsolutePath
         }
       }
     }

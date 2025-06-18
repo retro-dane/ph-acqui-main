@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./header.module.css"
 import logoImage from "../../images/ph-logo.png"
 
