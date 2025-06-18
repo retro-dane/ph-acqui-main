@@ -227,16 +227,7 @@ export const query = graphql`
           model
           year
           price
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(
-                width: 400
-                height: 250
-                placeholder: BLURRED
-                formats: [AUTO, WEBP]
-              )
-            }
-          }
+          featuredImage
         }
         fields {
           slug

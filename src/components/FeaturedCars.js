@@ -19,9 +19,7 @@ const FeaturedCars = () => {
             condition
             transmission
             fuelType
-            featuredImage {
-              publicURL
-            }
+            featuredImage
           }
           fields {
             slug
