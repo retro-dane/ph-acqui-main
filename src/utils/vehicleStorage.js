@@ -138,7 +138,7 @@ interiorColor: "${vehicle.interiorColor}"
 condition: "${vehicle.condition}"
 features:
 ${featuresYaml}
-featuredImage: "${vehicle.featuredImage || './hero-car.png'}"
+featuredImage: "${vehicle.featuredImage || '../../images/hero-car.png'}"
 galleryImages:
 ${vehicle.galleryImages?.map(img => `  - "${img}"`).join('\n') || '  - "../../images/vehicles/icon.png"'}
 ---

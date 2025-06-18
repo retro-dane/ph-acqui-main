@@ -7,7 +7,7 @@ mileage: 0
 condition: "Good"
 transmission: "Manual"
 fuelType: "Electric"
-featuredImage: "./hero-car.png"
+featuredImage: "../../images/hero-car.png"
 ---
 
 # Schema Helper

@@ -5,6 +5,7 @@ import AdminAuth from '../components/AdminAuth'
 import ImageUpload from '../components/ImageUpload'
 import MultiImageUpload from '../components/MultiImageUpload'
 import storageManager from '../utils/storageManager'
+import heroCarImage from '../images/hero-car.png'
 import '../styles/admin.css'
 
 const AdminPage = () => {
@@ -175,7 +176,7 @@ const AdminPage = () => {
       price: formData.price ? parseInt(formData.price) : null,
       mileage: formData.mileage ? parseInt(formData.mileage) : null,
       features: selectedFeatures,
-      featuredImage: uploadedImageUrl || (thumbnailImages.length > 0 ? thumbnailImages[0].url : "./hero-car.png"),
+      featuredImage: uploadedImageUrl || (thumbnailImages.length > 0 ? thumbnailImages[0].url : heroCarImage),
       imagePath: uploadedImagePath || '',
       thumbnailImages: thumbnailImages,
       galleryImages: galleryImages

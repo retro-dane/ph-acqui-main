@@ -227,7 +227,9 @@ export const query = graphql`
           model
           year
           price
-          featuredImage
+          featuredImage {
+            publicURL
+          }
         }
         fields {
           slug
