@@ -2,21 +2,24 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import CarCard from "../components/CarCard/carCard"
+import { useVehicles } from "../hooks/useVehicles"
 import "../styles/inventory.css"
 import heroCarImage from "../images/hero-car.png"
 
 const InventoryPage = ({ data }) => {
+  // Get vehicles from both markdown files and localStorage
+  const { allVehicles, isLoaded } = useVehicles(data.allMarkdownRemark.nodes)
+  
   // Define helper function first
   const checkPriceRange = (price, range) => {
     const [min, max] = range.split("-").map(Number)
     return price >= min && price <= max
   }
 
-  // Then use it in your component
-  const allCars = data.allMarkdownRemark.nodes.map(node => ({
-    ...node.frontmatter,
-    slug: node.fields.slug,
-    id: node.id
+  // Map vehicles to the expected format
+  const allCars = allVehicles.map(vehicle => ({
+    ...vehicle,
+    slug: vehicle.slug || `/inventory/${vehicle.id}`,
   }))
 
   const [filters, setFilters] = useState({
@@ -176,7 +179,12 @@ const InventoryPage = ({ data }) => {
               </div>
               
               <div className="inventory-grid">
-                {filteredCars.length > 0 ? (
+                {!isLoaded ? (
+                  <div className="loading-state">
+                    <div className="loading-spinner"></div>
+                    <p>Loading vehicles...</p>
+                  </div>
+                ) : filteredCars.length > 0 ? (
                   filteredCars.map(car => (
                     <CarCard key={car.id} car={car} />
                   ))
@@ -211,10 +219,7 @@ const InventoryPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/inventory/"}}
-      sort: {frontmatter: {year: DESC}}
-    ) {
+    allMarkdownRemark {
       nodes {
         id
         frontmatter {
@@ -223,14 +228,7 @@ export const query = graphql`
           year
           price
           featuredImage {
-            childImageSharp {
-              gatsbyImageData(
-                width: 400
-                height: 250
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
+            publicURL
           }
         }
         fields {

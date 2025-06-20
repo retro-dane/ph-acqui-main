@@ -11,6 +11,7 @@ const Navbar = () => {
     { text: "Services", url: "/services" },
     { text: "Inventory", url: "/inventory" },
     { text: "Contact Us", url: "/contact" },
+    { text: "Admin", url: "/admin" },
   ]
 
   return (

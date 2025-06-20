@@ -1,14 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import CarPlaceholder from "../CarPlaceholder"
 import * as styles from "./carCard.module.css"
 
 const CarCard = ({ car }) => {
+  // Early return if no car data
+  if (!car) {
+    return null
+  }
+
   // Safely destructure with fallbacks
   const { 
     frontmatter = {}, 
     fields = {} 
-  } = car || {}
+  } = car
 
   const { 
     make = 'Unknown Make', 
@@ -20,24 +26,36 @@ const CarCard = ({ car }) => {
 
   // Handle missing image data
   const imageData = featuredImage?.childImageSharp?.gatsbyImageData || null
+  
+  // Check for images in priority order: thumbnail > featured > default
+  const thumbnailImage = car?.thumbnailImages && car.thumbnailImages.length > 0 ? car.thumbnailImages[0]?.url : null
+  const featuredImageUrl = car?.featuredImage && typeof car.featuredImage === 'string' && car.featuredImage.includes('firebase') ? car.featuredImage : null
+  const firebaseImageUrl = thumbnailImage || featuredImageUrl
 
   return (
     <div className={styles.card}>
       <Link 
-        to={`/inventory${fields?.slug || ''}`} 
+        to={fields?.slug || `/vehicle/${car.id || ''}`} 
         className={styles.cardLink}
       >
         <div className={styles.imageContainer}>
-          {imageData ? (
+          {firebaseImageUrl ? (
+            <img
+              src={firebaseImageUrl}
+              alt={`${year} ${make} ${model}`}
+              className={styles.carImage}
+            />
+          ) : imageData ? (
             <GatsbyImage
               image={imageData}
               alt={`${year} ${make} ${model}`}
               className={styles.carImage}
             />
           ) : (
-            <div className={styles.imagePlaceholder}>
-              Image not available
-            </div>
+            <CarPlaceholder
+              className={styles.imagePlaceholder}
+              alt={`${year} ${make} ${model}`}
+            />
           )}
         </div>
         <div className={styles.cardBody}>
@@ -45,7 +63,7 @@ const CarCard = ({ car }) => {
             {year} {make} {model}
           </h3>
           <p className={styles.carPrice}>
-            ${typeof price === 'number' ? price.toLocaleString() : '0'}
+            J${typeof price === 'number' ? price.toLocaleString() : '0'}
           </p>
           <div className={styles.cardFooter}>
             <span className={styles.detailsLink}>View Details →</span>
