@@ -4,7 +4,7 @@ This document explains how to configure robust storage for your vehicle inventor
 
 ## 📖 Overview
 
-The PH Aqui admin system supports multiple storage backends with automatic fallback:
+The PH Acquiisitions and Maintenance admin system supports multiple storage backends with automatic fallback:
 
 - **localStorage** (Browser-only, fallback)
 - **File Storage** (Development, automatic)

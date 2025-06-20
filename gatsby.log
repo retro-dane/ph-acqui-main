@@ -8225,3 +8225,81 @@ File: .cache/dev-404-page.js
 
 [2K[1A[2K[Gsuccess write out requires - 0.000s
 
+[2K[1A[2K[Ginfo deleted file at /Users/khadanehood/StudioProjects/ph-aqui-main/src/content/
+inventory/hero-car.png
+
+[2K[1A[2K[Gsuccess building schema - 0.055s
+
+[2K[1A[2K[Gsuccess createPages - 0.001s
+
+[2K[1A[2K[Ginfo Total nodes: 43, SitePage nodes: 10 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[G
+ ERROR #85913  GRAPHQL.EXTRACTION
+
+There was a problem reading the file:
+/Users/khadanehood/StudioProjects/ph-aqui-main/.cache/dev-404-page.js
+
+File: .cache/dev-404-page.js
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mError[0m[37m[41m:[0m[37m[41m [0m[97m[41mENOENT: no such file or directory, open '/Users/khadanehood/StudioProje[0m
+  [0m[97m[41mcts/ph-aqui-main/.cache/dev-404-page.js'[0m
+[0m
+
+[2K[1A[2K[G
+ ERROR #85922  GRAPHQL.VALIDATION
+
+There was an error in your GraphQL query:
+
+      Field "featuredImage" must not have a selection since type "String" has no
+ subfields.
+
+      This can happen if you e.g. accidentally added { } to the field
+"featuredImage". If you didn't expect "featuredImage" to be of type "String"
+make sure that your input source and/or plugin is correct.
+      However, if you expect "featuredImage" to exist, the field might be
+accessible in another subfield. Please try your query in GraphiQL.
+
+      It is recommended to explicitly type your GraphQL schema if you want to
+use optional fields.
+
+File: src/components/FeaturedCars.js:22:27
+
+See our docs page for more info on this error:
+https://gatsby.dev/creating-type-definitions
+
+
+[2K[1A[2K[G
+ ERROR #85922  GRAPHQL.VALIDATION
+
+There was an error in your GraphQL query:
+
+      Field "featuredImage" must not have a selection since type "String" has no
+ subfields.
+
+      This can happen if you e.g. accidentally added { } to the field
+"featuredImage". If you didn't expect "featuredImage" to be of type "String"
+make sure that your input source and/or plugin is correct.
+      However, if you expect "featuredImage" to exist, the field might be
+accessible in another subfield. Please try your query in GraphiQL.
+
+      It is recommended to explicitly type your GraphQL schema if you want to
+use optional fields.
+
+File: src/pages/inventory.js:230:25
+
+See our docs page for more info on this error:
+https://gatsby.dev/creating-type-definitions
+
+
+[2K[1A[2K[Gfailed extract queries from components - 0.032s
+
+[2K[1A[2K[Gsuccess write out requires - 0.000s
+

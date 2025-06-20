@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Styled%20with-CSS3-1572B6?style=for-the-badge&logo=css3" alt="CSS3" />
 </p>
 
-A modern, responsive car dealership website built for the Jamaican market with dynamic inventory management, image uploads, and real-time updates.
+A modern, responsive car dealership website built for PH Acquisitions and Maintainnace with dynamic inventory management, image uploads, and real-time updates.
 
 ## ✨ Features
 
@@ -17,7 +17,6 @@ A modern, responsive car dealership website built for the Jamaican market with d
 - **Detailed Vehicle Pages** with image galleries
 - **Contact Forms** and scheduling
 - **Mobile-Responsive** design
-- **JMD Currency** formatting for Jamaica
 
 ### 🛠️ **For Dealership Staff**
 - **Admin Dashboard** for easy vehicle management
