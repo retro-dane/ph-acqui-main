@@ -17,10 +17,18 @@ const InventoryPage = ({ data }) => {
   }
 
   // Map vehicles to the expected format
-  const allCars = allVehicles.map(vehicle => ({
-    ...vehicle,
-    slug: vehicle.slug || `/inventory/${vehicle.id}`,
-  }))
+  const allCars = allVehicles.map(vehicle => {
+    console.log('Mapping vehicle:', { 
+      id: vehicle.id, 
+      make: vehicle.make || vehicle.frontmatter?.make, 
+      model: vehicle.model || vehicle.frontmatter?.model,
+      fields: vehicle.fields
+    })
+    return {
+      ...vehicle,
+      slug: vehicle.fields?.slug || `/vehicle/${vehicle.id}`,
+    }
+  })
 
   const [filters, setFilters] = useState({
     make: "",

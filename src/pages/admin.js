@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
 import AdminAuth from '../components/AdminAuth'
-import ImageUpload from '../components/ImageUpload'
 import MultiImageUpload from '../components/MultiImageUpload'
 import storageManager from '../utils/storageManager'
 import heroCarImage from '../images/hero-car.png'
@@ -55,6 +54,7 @@ const AdminPage = () => {
   const [uploadedImagePath, setUploadedImagePath] = useState('')
   const [thumbnailImages, setThumbnailImages] = useState([])
   const [galleryImages, setGalleryImages] = useState([])
+  const [isFormVisible, setIsFormVisible] = useState(false)
 
   // Load stored vehicles on component mount
   useEffect(() => {
@@ -153,12 +153,9 @@ const AdminPage = () => {
     setThumbnailImages(vehicle.thumbnailImages || [])
     setGalleryImages(vehicle.galleryImages || [])
     setSubmitMessage('')
+    setIsFormVisible(true) // Open the form when editing
   }
 
-  const handleImageUploaded = (imageUrl, imagePath) => {
-    setUploadedImageUrl(imageUrl)
-    setUploadedImagePath(imagePath)
-  }
 
   const handleThumbnailImagesUploaded = (images) => {
     setThumbnailImages(images)
@@ -226,6 +223,7 @@ const AdminPage = () => {
       setThumbnailImages([])
       setGalleryImages([])
       setEditingVehicle(null)
+      setIsFormVisible(false) // Close form after successful submission
       
     } catch (error) {
       setSubmitMessage(`❌ Error saving vehicle: ${error.message}`)
@@ -297,22 +295,18 @@ const AdminPage = () => {
                     </p>
                   </div>
                   <div className="vehicle-actions">
-                    {vehicle.source === 'stored' && (
-                      <>
-                        <button 
-                          className="btn-edit"
-                          onClick={() => handleEditVehicle(vehicle)}
-                        >
-                          Edit
-                        </button>
-                        <button 
-                          className="btn-delete"
-                          onClick={() => handleDeleteVehicle(vehicle.id)}
-                        >
-                          Delete
-                        </button>
-                      </>
-                    )}
+                    <button 
+                      className="btn-edit"
+                      onClick={() => handleEditVehicle(vehicle)}
+                    >
+                      Edit
+                    </button>
+                    <button 
+                      className="btn-delete"
+                      onClick={() => handleDeleteVehicle(vehicle.id)}
+                    >
+                      Delete
+                    </button>
                     {vehicle.source === 'markdown' && (
                       <span className="vehicle-source">From file</span>
                     )}
@@ -328,16 +322,70 @@ const AdminPage = () => {
         </div>
 
         <div className="admin-section">
-          <h2>➕ Add New Vehicle</h2>
+          <h2 
+            className="collapsible-header"
+            onClick={() => setIsFormVisible(!isFormVisible)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsFormVisible(!isFormVisible);
+              }
+            }}
+            tabIndex={0}
+            role="button"
+            aria-expanded={isFormVisible}
+          >
+            {editingVehicle ? '✏️ Edit Vehicle' : 
+             `${isFormVisible ? '➖' : '➕'} Add New Vehicle`}
+          </h2>
+          {editingVehicle && (
+            <p className="edit-notice">
+              Editing: {editingVehicle.year} {editingVehicle.make} {editingVehicle.model}
+              <button 
+                type="button" 
+                onClick={() => {
+                  setEditingVehicle(null)
+                  setFormData({
+                    make: '',
+                    model: '',
+                    year: '',
+                    price: '',
+                    mileage: '',
+                    transmission: 'Automatic',
+                    fuelType: 'Gasoline',
+                    drivetrain: 'FWD',
+                    vin: '',
+                    exteriorColor: '',
+                    interiorColor: '',
+                    condition: 'Excellent',
+                    features: [],
+                    description: ''
+                  })
+                  setSelectedFeatures([])
+                  setUploadedImageUrl('')
+                  setUploadedImagePath('')
+                  setThumbnailImages([])
+                  setGalleryImages([])
+                  setSubmitMessage('')
+                  setIsFormVisible(false)
+                }}
+                className="cancel-edit-btn"
+              >
+                Cancel Edit
+              </button>
+            </p>
+          )}
         </div>
 
-        {submitMessage && (
-          <div className={`message ${submitMessage.includes('✅') ? 'success' : 'error'}`}>
-            {submitMessage}
-          </div>
-        )}
+        {isFormVisible && (
+          <>
+            {submitMessage && (
+              <div className={`message ${submitMessage.includes('✅') ? 'success' : 'error'}`}>
+                {submitMessage}
+              </div>
+            )}
 
-        <form onSubmit={handleSubmit} className="vehicle-form">
+            <form onSubmit={handleSubmit} className="vehicle-form">
           <div className="form-section">
             <h2>Vehicle Images</h2>
             
@@ -565,12 +613,15 @@ const AdminPage = () => {
 
           <div className="form-actions">
             <button type="submit" disabled={isSubmitting} className="submit-btn">
-              {isSubmitting ? 'Creating Vehicle File...' : 'Create Vehicle File'}
+              {isSubmitting 
+                ? (editingVehicle ? 'Updating Vehicle...' : 'Creating Vehicle File...') 
+                : (editingVehicle ? 'Update Vehicle' : 'Create Vehicle File')
+              }
             </button>
           </div>
         </form>
 
-        <div className="instructions">
+            <div className="instructions">
           <h3>🎉 How It Works:</h3>
           <ol>
             <li>Fill out the form above with vehicle details</li>
@@ -612,6 +663,8 @@ const AdminPage = () => {
             </button>
           </div>
         </div>
+        </>
+        )}
         </div>
       </AdminAuth>
     </Layout>

@@ -35,13 +35,20 @@ export const useVehicles = (markdownVehicles = []) => {
   // Combine markdown and stored vehicles
   const allVehicles = [
     // Markdown vehicles (from .md files)
-    ...markdownVehicles.map(vehicle => ({
-      id: vehicle.id,
-      source: 'markdown',
-      frontmatter: vehicle.frontmatter,
-      fields: vehicle.fields,
-      ...vehicle.frontmatter
-    })),
+    ...markdownVehicles.map(vehicle => {
+      // Extract ID from slug: /vehicle/2022-honda-civic/ -> 2022-honda-civic
+      const id = vehicle.fields?.slug?.replace(/^\/vehicle\//, '').replace(/\/$/, '') || 
+                 vehicle.id || 
+                 `${vehicle.frontmatter?.year || 'unknown'}-${vehicle.frontmatter?.make || 'unknown'}-${vehicle.frontmatter?.model || 'unknown'}`.toLowerCase().replace(/\s+/g, '-')
+      
+      return {
+        id,
+        source: 'markdown',
+        frontmatter: vehicle.frontmatter,
+        fields: vehicle.fields,
+        ...vehicle.frontmatter
+      }
+    }),
     // Stored vehicles (from Firebase/localStorage) - format like markdown vehicles
     ...storedVehicles.map(vehicle => ({
       ...vehicle,
