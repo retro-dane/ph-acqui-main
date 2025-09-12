@@ -29,20 +29,30 @@ class StorageManager {
   }
 
   async setupPrimaryAdapter() {
+    // Temporarily disable Firestore to avoid permissions issues
+    // TODO: Re-enable when Firebase security rules are properly configured
+    const USE_FIRESTORE = false
+    
     // Try Firebase Firestore first (browser only)
-    if (typeof window !== 'undefined') {
+    if (USE_FIRESTORE && typeof window !== 'undefined') {
       try {
         console.log('🔥 Attempting to initialize Firestore adapter')
         // Dynamically import Firebase adapter to avoid SSR issues
         const { FirestoreAdapter } = await import('./firestoreAdapter')
-        this.primaryAdapter = new FirestoreAdapter()
+        const firestoreAdapter = new FirestoreAdapter()
+        
+        // Test Firestore connection and permissions
+        await firestoreAdapter.healthCheck()
+        this.primaryAdapter = firestoreAdapter
         this.adapters = [this.primaryAdapter, this.fallbackAdapter]
         console.log('✅ Using Firestore as primary storage')
         return
       } catch (error) {
-        console.warn('⚠️ Firestore not available, trying other options:', error.message)
-        console.warn('Error details:', error)
+        console.warn('⚠️ Firestore not available or insufficient permissions, falling back to localStorage:', error.message)
+        console.warn('This is likely due to Firestore security rules. Using localStorage instead.')
       }
+    } else if (!USE_FIRESTORE) {
+      console.log('🔥 Firestore disabled - using localStorage as primary storage')
     } else {
       console.log('🖥️ Server-side rendering detected, skipping Firestore')
     }

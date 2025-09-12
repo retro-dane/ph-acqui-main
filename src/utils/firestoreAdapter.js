@@ -42,6 +42,12 @@ export class FirestoreAdapter {
       return vehicles
     } catch (error) {
       console.error('Error fetching vehicles from Firestore:', error)
+      
+      // Handle permission errors specifically
+      if (error.code === 'permission-denied' || error.message.includes('Missing or insufficient permissions')) {
+        throw new Error('Missing or insufficient permissions to read vehicles from Firestore')
+      }
+      
       throw error
     }
   }
@@ -99,6 +105,12 @@ export class FirestoreAdapter {
       }
     } catch (error) {
       console.error('Error saving vehicle to Firestore:', error)
+      
+      // Handle permission errors specifically
+      if (error.code === 'permission-denied' || error.message.includes('Missing or insufficient permissions')) {
+        throw new Error('Missing or insufficient permissions to save vehicles to Firestore')
+      }
+      
       throw error
     }
   }
@@ -194,12 +206,18 @@ export class FirestoreAdapter {
   // Health check method
   async healthCheck() {
     try {
-      // Try to read from the collection to verify connection
+      // Try to read from the collection to verify connection and permissions
       const q = query(this.collection, orderBy('createdAt', 'desc'))
       await getDocs(q)
       return { status: 'connected', service: 'Firestore' }
     } catch (error) {
       console.error('Firestore health check failed:', error)
+      
+      // Check for specific permission errors
+      if (error.code === 'permission-denied' || error.message.includes('Missing or insufficient permissions')) {
+        throw new Error('Missing or insufficient permissions. Please configure Firestore security rules or use localStorage.')
+      }
+      
       return { status: 'disconnected', service: 'Firestore', error: error.message }
     }
   }

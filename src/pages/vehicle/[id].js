@@ -1,40 +1,41 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../../components/Layout"
-import storageManager from "../../utils/storageManager"
+import { useVehicles } from "../../hooks/useVehicles"
 import heroCarImage from "../../images/hero-car.png"
 import "../../styles/vehicle-detail.css"
 
-const VehicleDetailPage = ({ params }) => {
+const VehicleDetailPage = ({ params, data }) => {
+  const { allVehicles, isLoaded } = useVehicles(data?.allMarkdownRemark?.nodes || [])
   const [vehicle, setVehicle] = useState(null)
-  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [selectedImage, setSelectedImage] = useState(0)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
-    const loadVehicle = async () => {
-      try {
-        const vehicles = await storageManager.getVehicles()
-        const foundVehicle = vehicles.find(v => v.id === params.id)
+    if (isLoaded && params.id) {
+      const foundVehicle = allVehicles.find(v => v.id === params.id)
+      
+      if (foundVehicle) {
+        setVehicle(foundVehicle)
+        setError(null)
+      } else {
+        // Try case-insensitive match
+        const caseInsensitiveMatch = allVehicles.find(v => 
+          v.id && v.id.toLowerCase() === params.id.toLowerCase()
+        )
         
-        if (foundVehicle) {
-          setVehicle(foundVehicle)
+        if (caseInsensitiveMatch) {
+          setVehicle(caseInsensitiveMatch)
+          setError(null)
         } else {
-          setError('Vehicle not found')
+          setError(`Vehicle not found. ID: ${params.id}`)
         }
-      } catch (err) {
-        setError('Failed to load vehicle details')
-        console.error('Error loading vehicle:', err)
-      } finally {
-        setLoading(false)
       }
     }
+  }, [allVehicles, isLoaded, params.id])
 
-    if (params.id) {
-      loadVehicle()
-    }
-  }, [params.id])
-
-  if (loading) {
+  if (!isLoaded) {
     return (
       <Layout pageTitle="Loading...">
         <div className="vehicle-detail-loading">
@@ -78,13 +79,44 @@ const VehicleDetailPage = ({ params }) => {
     galleryImages = []
   } = vehicle
 
-  // Use uploaded image if available, otherwise fallback to default
+  // Handle different image sources
+  const getImageUrl = (image) => {
+    if (typeof image === 'string') return image
+    if (image?.url) return image.url
+    if (image?.publicURL) return image.publicURL
+    if (image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src) {
+      return image.childImageSharp.gatsbyImageData.images.fallback.src
+    }
+    return heroCarImage
+  }
+
+  // Use uploaded images if available, otherwise fallback to featured image or default
   const mainImage = thumbnailImages.length > 0 
-    ? thumbnailImages[0].url 
-    : (featuredImage && featuredImage.includes('firebase') ? featuredImage : heroCarImage)
+    ? getImageUrl(thumbnailImages[0]) 
+    : (featuredImage ? getImageUrl(featuredImage) : heroCarImage)
   
-  // All images for gallery (thumbnail + gallery images)
+  // All images for gallery (thumbnail + gallery images + featured if different)
   const allImages = [...thumbnailImages, ...galleryImages]
+  if (featuredImage && !thumbnailImages.length && !galleryImages.length) {
+    allImages.push({ url: getImageUrl(featuredImage) })
+  }
+
+  const openModal = (imageIndex) => {
+    setSelectedImage(imageIndex)
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
+
+  const nextImage = () => {
+    setSelectedImage((prev) => (prev + 1) % allImages.length)
+  }
+
+  const prevImage = () => {
+    setSelectedImage((prev) => (prev - 1 + allImages.length) % allImages.length)
+  }
 
   return (
     <Layout pageTitle={`${year} ${make} ${model}`}>
@@ -95,22 +127,31 @@ const VehicleDetailPage = ({ params }) => {
         
         <div className="vehicle-detail-content">
           <div className="vehicle-images">
-            <div className="main-image">
+            <div className="main-image" onClick={() => openModal(0)}>
               <img 
                 src={mainImage} 
                 alt={`${year} ${make} ${model}`}
                 className="vehicle-main-image"
               />
+              {allImages.length > 1 && (
+                <div className="image-overlay">
+                  <span>📸 View Gallery ({allImages.length} photos)</span>
+                </div>
+              )}
             </div>
             
             {allImages.length > 1 && (
               <div className="image-gallery">
-                <h3>More Photos</h3>
+                <h3>More Photos ({allImages.length})</h3>
                 <div className="gallery-grid">
                   {allImages.map((image, index) => (
-                    <div key={index} className="gallery-item">
+                    <div 
+                      key={index} 
+                      className="gallery-item"
+                      onClick={() => openModal(index)}
+                    >
                       <img 
-                        src={image.url} 
+                        src={getImageUrl(image)} 
                         alt={`${year} ${make} ${model} - Photo ${index + 1}`}
                         className="gallery-image"
                       />
@@ -219,9 +260,79 @@ const VehicleDetailPage = ({ params }) => {
             </div>
           </div>
         </div>
+
+        {/* Image Modal */}
+        {showModal && allImages.length > 0 && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button className="modal-close" onClick={closeModal}>×</button>
+              
+              <div className="modal-image-container">
+                <img 
+                  src={getImageUrl(allImages[selectedImage])} 
+                  alt={`${year} ${make} ${model} - Photo ${selectedImage + 1}`}
+                  className="modal-image"
+                />
+                
+                {allImages.length > 1 && (
+                  <>
+                    <button className="modal-nav prev" onClick={prevImage}>‹</button>
+                    <button className="modal-nav next" onClick={nextImage}>›</button>
+                    
+                    <div className="modal-counter">
+                      {selectedImage + 1} / {allImages.length}
+                    </div>
+                  </>
+                )}
+              </div>
+              
+              <div className="modal-thumbnails">
+                {allImages.map((image, index) => (
+                  <div 
+                    key={index}
+                    className={`modal-thumbnail ${index === selectedImage ? 'active' : ''}`}
+                    onClick={() => setSelectedImage(index)}
+                  >
+                    <img 
+                      src={getImageUrl(image)} 
+                      alt={`Thumbnail ${index + 1}`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      nodes {
+        id
+        frontmatter {
+          make
+          model
+          year
+          price
+          mileage
+          condition
+          featuredImage {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
 
 export default VehicleDetailPage

@@ -45,6 +45,55 @@
   border: 1px solid #f5c6cb;
 }
 
+.edit-notice {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ffeaa7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.cancel-edit-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-edit-btn:hover {
+  background-color: #5a6268;
+}
+
+.collapsible-header {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collapsible-header:hover {
+  color: var(--primary, #007bff);
+}
+
+.collapsible-header:active {
+  transform: translateY(1px);
+}
+
+.admin-section .collapsible-header {
+  margin-bottom: 0;
+}
+
 .vehicle-form {
   background: white;
   border-radius: 12px;
