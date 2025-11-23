@@ -4,14 +4,26 @@ import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth'
 
+// Firebase configuration from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyC2w4RRZjVHpSpricqM_X4T8glMkMSL674",
-  authDomain: "ph-acqui-main.firebaseapp.com",
-  projectId: "ph-acqui-main",
-  storageBucket: "ph-acqui-main.firebasestorage.app",
-  messagingSenderId: "997523772315",
-  appId: "1:997523772315:web:ed50ef0d50c14330bbc73e",
-  measurementId: "G-4LRHYCVK8F"
+  apiKey: process.env.GATSBY_FIREBASE_API_KEY,
+  authDomain: process.env.GATSBY_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.GATSBY_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.GATSBY_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.GATSBY_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.GATSBY_FIREBASE_APP_ID,
+  measurementId: process.env.GATSBY_FIREBASE_MEASUREMENT_ID
+}
+
+// Validate that all required Firebase config values are present
+if (typeof window !== 'undefined') {
+  const requiredKeys = ['apiKey', 'authDomain', 'projectId', 'storageBucket', 'appId']
+  const missingKeys = requiredKeys.filter(key => !firebaseConfig[key])
+
+  if (missingKeys.length > 0) {
+    console.error('Missing Firebase configuration:', missingKeys)
+    console.error('Please check your environment variables in .env.development or Netlify settings')
+  }
 }
 
 // Initialize Firebase (browser only)
