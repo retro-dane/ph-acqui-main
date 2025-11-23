@@ -32,6 +32,8 @@ yarn-error.log*
 .firebase/
 firebase-debug.log
 firestore-debug.log
+# Note: .firebaserc and firebase.json can be safely committed
+# Firebase client credentials are public and protected by Security Rules
 
 # Local Netlify folder
 .netlify

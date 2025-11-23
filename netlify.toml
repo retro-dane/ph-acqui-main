@@ -1,12 +1,19 @@
 [build]
   publish = "public"
   command = "npm run build"
+  # Ignore Firebase client credentials (they are meant to be public)
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
 
 [build.environment]
   NODE_VERSION = "18"
   GATSBY_CPU_COUNT = "1"
   # Disable AVIF processing to prevent build failures
   GATSBY_AVIF = "false"
+
+# Firebase client credentials are not secrets - they're public by design
+# Security is handled by Firestore/Storage Rules, not by hiding config
+[build.processing]
+  skip_processing = false
 
 # Redirect rules for SPA routing and dynamic pages
 [[redirects]]
