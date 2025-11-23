@@ -1,14 +1,13 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import CarCard from "../components/CarCard/carCard"
 import { useVehicles } from "../hooks/useVehicles"
 import "../styles/inventory.css"
 import heroCarImage from "../images/hero-car.png"
 
-const InventoryPage = ({ data }) => {
-  // Get vehicles from both markdown files and localStorage
-  const { allVehicles, isLoaded } = useVehicles(data.allMarkdownRemark.nodes)
+const InventoryPage = () => {
+  // Get vehicles from Firebase only (no more markdown files)
+  const { allVehicles, isLoaded } = useVehicles([])
   
   // Define helper function first
   const checkPriceRange = (price, range) => {
@@ -224,27 +223,5 @@ const InventoryPage = ({ data }) => {
     </Layout>
   )
 }
-
-export const query = graphql`
-  query {
-    allMarkdownRemark {
-      nodes {
-        id
-        frontmatter {
-          make
-          model
-          year
-          price
-          featuredImage {
-            publicURL
-          }
-        }
-        fields {
-          slug
-        }
-      }
-    }
-  }
-`
 
 export default InventoryPage

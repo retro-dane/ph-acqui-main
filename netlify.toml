@@ -7,3 +7,55 @@
   GATSBY_CPU_COUNT = "1"
   # Disable AVIF processing to prevent build failures
   GATSBY_AVIF = "false"
+
+# Redirect rules for SPA routing and dynamic pages
+[[redirects]]
+  from = "/vehicle/*"
+  to = "/vehicle/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/setup"
+  to = "/setup/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/reset-password"
+  to = "/reset-password/index.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets for better performance
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Don't cache HTML files
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

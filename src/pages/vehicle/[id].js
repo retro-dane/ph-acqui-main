@@ -5,8 +5,9 @@ import { useVehicles } from "../../hooks/useVehicles"
 import heroCarImage from "../../images/hero-car.png"
 import "../../styles/vehicle-detail.css"
 
-const VehicleDetailPage = ({ params, data }) => {
-  const { allVehicles, isLoaded } = useVehicles(data?.allMarkdownRemark?.nodes || [])
+const VehicleDetailPage = ({ params }) => {
+  // Get vehicles from Firebase only (no more markdown files)
+  const { allVehicles, isLoaded } = useVehicles([])
   const [vehicle, setVehicle] = useState(null)
   const [error, setError] = useState(null)
   const [selectedImage, setSelectedImage] = useState(0)
@@ -308,28 +309,12 @@ const VehicleDetailPage = ({ params, data }) => {
   )
 }
 
+// Empty query to satisfy Gatsby's build process for dynamic routes
 export const query = graphql`
   query {
-    allMarkdownRemark {
-      nodes {
-        id
-        frontmatter {
-          make
-          model
-          year
-          price
-          mileage
-          condition
-          featuredImage {
-            publicURL
-            childImageSharp {
-              gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-            }
-          }
-        }
-        fields {
-          slug
-        }
+    site {
+      siteMetadata {
+        title
       }
     }
   }

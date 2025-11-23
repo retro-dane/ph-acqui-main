@@ -29,9 +29,8 @@ class StorageManager {
   }
 
   async setupPrimaryAdapter() {
-    // Temporarily disable Firestore to avoid permissions issues
-    // TODO: Re-enable when Firebase security rules are properly configured
-    const USE_FIRESTORE = false
+    // Enable Firestore for production use
+    const USE_FIRESTORE = true
     
     // Try Firebase Firestore first (browser only)
     if (USE_FIRESTORE && typeof window !== 'undefined') {

@@ -2,6 +2,7 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
+import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyC2w4RRZjVHpSpricqM_X4T8glMkMSL674",
@@ -14,16 +15,18 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase (browser only)
-let app, db, storage
+let app, db, storage, auth
 
 if (typeof window !== 'undefined') {
   app = initializeApp(firebaseConfig)
   db = getFirestore(app)
   storage = getStorage(app)
+  auth = getAuth(app)
 } else {
   app = null
   db = null
   storage = null
+  auth = null
 }
 
 // Connect to Firestore emulator in development if available
@@ -40,5 +43,5 @@ if (typeof window !== 'undefined' && db && window.location.hostname === 'localho
   }
 }
 
-export { db, storage }
+export { db, storage, auth }
 export default app

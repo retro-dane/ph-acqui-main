@@ -27,10 +27,25 @@ const CarCard = ({ car }) => {
   // Handle missing image data
   const imageData = featuredImage?.childImageSharp?.gatsbyImageData || null
   
-  // Check for images in priority order: thumbnail > featured > default
+  // Check for images in priority order: thumbnail > gallery > featured > default
   const thumbnailImage = car?.thumbnailImages && car.thumbnailImages.length > 0 ? car.thumbnailImages[0]?.url : null
+  const galleryImage = car?.galleryImages && car.galleryImages.length > 0 ? car.galleryImages[0]?.url : null
   const featuredImageUrl = car?.featuredImage && typeof car.featuredImage === 'string' && car.featuredImage.includes('firebase') ? car.featuredImage : null
-  const firebaseImageUrl = thumbnailImage || featuredImageUrl
+  const firebaseImageUrl = thumbnailImage || galleryImage || featuredImageUrl
+
+  // Debug logging for image data
+  if (car.source === 'stored') {
+    console.log('🚗 CarCard Debug:', {
+      id: car.id,
+      make: car.make || make,
+      thumbnailCount: car.thumbnailImages?.length,
+      galleryCount: car.galleryImages?.length,
+      thumbnailImage,
+      galleryImage,
+      featuredImageUrl,
+      finalImageUrl: firebaseImageUrl
+    })
+  }
 
   return (
     <div className={styles.card}>

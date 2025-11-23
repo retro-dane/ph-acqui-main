@@ -245,7 +245,7 @@
 
 .form-header h2 {
   font-size: 2rem;
-  color: black;
+  color: black !important;
   margin-bottom: 1rem;
   font-weight: 800;
 }

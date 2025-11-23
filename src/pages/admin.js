@@ -1,34 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
 import AdminAuth from '../components/AdminAuth'
 import MultiImageUpload from '../components/MultiImageUpload'
 import storageManager from '../utils/storageManager'
+import { signOutUser, onAuthStateChange } from '../utils/authHelper'
 import heroCarImage from '../images/hero-car.png'
 import '../styles/admin.css'
 
 const AdminPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        nodes {
-          id
-          frontmatter {
-            make
-            model
-            year
-            price
-            mileage
-            condition
-          }
-        }
-      }
-    }
-  `)
-
-  const markdownVehicles = data.allMarkdownRemark.nodes
+  // All vehicles now come from Firebase only
   const [storedVehicles, setStoredVehicles] = useState([])
   const [editingVehicle, setEditingVehicle] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null)
   const [formData, setFormData] = useState({
     make: '',
     model: '',
@@ -56,13 +39,21 @@ const AdminPage = () => {
   const [galleryImages, setGalleryImages] = useState([])
   const [isFormVisible, setIsFormVisible] = useState(false)
 
+  // Listen for auth state changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChange((userData) => {
+      setCurrentUser(userData)
+    })
+    return () => unsubscribe()
+  }, [])
+
   // Load stored vehicles on component mount
   useEffect(() => {
     const loadVehicles = async () => {
       try {
         const vehicles = await storageManager.getVehicles()
         setStoredVehicles(vehicles)
-        
+
         // Load storage status asynchronously
         const status = await storageManager.getStorageStatus()
         setStorageStatus(status)
@@ -74,18 +65,11 @@ const AdminPage = () => {
     loadVehicles()
   }, [])
 
-  // Combine markdown and stored vehicles
-  const allVehicles = [
-    ...markdownVehicles.map(v => ({
-      id: v.id,
-      source: 'markdown',
-      ...v.frontmatter
-    })),
-    ...storedVehicles.map(v => ({
-      ...v,
-      source: 'stored'
-    }))
-  ]
+  // All vehicles now come from Firebase only
+  const allVehicles = storedVehicles.map(v => ({
+    ...v,
+    source: 'stored'
+  }))
 
   const commonFeatures = [
     'Air Conditioning',
@@ -107,7 +91,8 @@ const AdminPage = () => {
     'Daytime Running Lights',
     'Remote Engine Start',
     'Keyless Entry',
-    'Leather Seats'
+    'Leather Seats',
+    'Heated steering'
   ]
 
   const handleInputChange = (e) => {
@@ -126,6 +111,15 @@ const AdminPage = () => {
         return [...prev, feature]
       }
     })
+  }
+
+  const handleLogout = async () => {
+    try {
+      await signOutUser()
+      window.location.href = '/admin'
+    } catch (error) {
+      console.error('Logout failed:', error)
+    }
   }
 
   const handleDeleteVehicle = async (vehicleId) => {
@@ -237,48 +231,43 @@ const AdminPage = () => {
       <AdminAuth>
         <div className="admin-container">
         <div className="admin-header">
-          <h1>🚗 PH Aqui Admin Dashboard</h1>
-          <p>Manage your vehicle inventory with ease</p>
-          
-          {storageStatus && storageStatus.adapters && (
-            <div className="storage-status">
-              <h3>📡 Storage Status</h3>
-              <div className="storage-adapters">
-                {storageStatus.adapters.map((adapter, index) => (
-                  <div key={index} className={`adapter-status ${adapter.isPrimary ? 'primary' : 'secondary'} ${adapter.status}`}>
-                    <div className="adapter-info">
-                      <span className="adapter-name">{adapter.name}</span>
-                      {adapter.isPrimary && <span className="primary-badge">Primary</span>}
-                    </div>
-                    <div className="status-info">
-                      <span className={`status-indicator ${adapter.status}`}>
-                        {adapter.status === 'connected' ? '🟢' : '🔴'}
-                      </span>
-                      <span className="status-text">{adapter.status}</span>
-                    </div>
-                    {adapter.error && (
-                      <div className="error-message">
-                        <small>Error: {adapter.error}</small>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-              {storageStatus.lastSync && (
-                <p className="last-sync">
-                  🔄 Last sync: {new Date(storageStatus.lastSync).toLocaleString()}
-                </p>
-              )}
-              {!storageStatus.lastSync && (
-                <p className="last-sync">
-                  🔄 No sync performed yet
-                </p>
-              )}
-              <p className="sync-status">
-                {storageStatus.syncEnabled ? '✅ Auto-sync enabled' : '⚠️ Auto-sync disabled'}
-              </p>
+          <h1>🚗 Vehicle Inventory Management</h1>
+          <p>Add and manage vehicles in your showroom</p>
+          <div className="quick-stats">
+            <div className="stat-card">
+              <div className="stat-number">{allVehicles.length}</div>
+              <div className="stat-label">Total Vehicles</div>
             </div>
-          )}
+            <div className="stat-card">
+              <div className="stat-number">{storedVehicles.length}</div>
+              <div className="stat-label">In Database</div>
+            </div>
+            <div className="stat-card status-card">
+              <div className="status-indicator">
+                {storageStatus?.adapters?.some(a => a.status === 'connected') ? (
+                  <>
+                    <span className="status-dot connected">●</span>
+                    <span className="status-text">Connected</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="status-dot disconnected">●</span>
+                    <span className="status-text">Disconnected</span>
+                  </>
+                )}
+              </div>
+              <div className="stat-label">Cloud Storage</div>
+            </div>
+            <div className="stat-card user-card">
+              <div className="user-info">
+                <span className="user-icon">👤</span>
+                <span className="user-name">{currentUser?.displayName || currentUser?.username || 'Admin'}</span>
+              </div>
+              <button onClick={handleLogout} className="logout-btn">
+                Logout
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="admin-section">
@@ -464,7 +453,7 @@ const AdminPage = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="mileage">Mileage *</label>
+                <label htmlFor="mileage">Mileage (km) *</label>
                 <input
                   type="number"
                   id="mileage"
@@ -476,7 +465,7 @@ const AdminPage = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="vin">VIN Number *</label>
+                <label htmlFor="vin">VIN/Chassis Number *</label>
                 <input
                   type="text"
                   id="vin"
@@ -614,8 +603,8 @@ const AdminPage = () => {
           <div className="form-actions">
             <button type="submit" disabled={isSubmitting} className="submit-btn">
               {isSubmitting 
-                ? (editingVehicle ? 'Updating Vehicle...' : 'Creating Vehicle File...') 
-                : (editingVehicle ? 'Update Vehicle' : 'Create Vehicle File')
+                ? (editingVehicle ? 'Updating Vehicle...' : 'Uploading Vehicle File...') 
+                : (editingVehicle ? 'Update Vehicle' : 'Create Vehicle ')
               }
             </button>
           </div>
@@ -624,44 +613,14 @@ const AdminPage = () => {
             <div className="instructions">
           <h3>🎉 How It Works:</h3>
           <ol>
-            <li>Fill out the form above with vehicle details</li>
-            <li>Click "Create Vehicle File" to instantly add to inventory</li>
-            <li>Vehicle appears immediately in the inventory list</li>
-            <li>Use Edit/Delete buttons to manage stored vehicles</li>
-            <li>Changes are saved automatically in your browser</li>
+            <li>Upload vehicle images - they're stored securely in Firebase Storage</li>
+            <li>Fill out the form with vehicle details (make, model, year, etc.)</li>
+            <li>Click "Create Vehicle File" to save to Firebase</li>
+            <li>Vehicle and images sync to cloud database (Firestore)</li>
+            <li>Vehicle appears on inventory page with uploaded images</li>
+            <li>Use Edit/Delete buttons to manage vehicles</li>
+            <li>All changes sync across devices automatically</li>
           </ol>
-          <div className="admin-actions">
-            <button 
-              type="button" 
-              onClick={async () => {
-                try {
-                  await storageManager.exportVehicles()
-                } catch (error) {
-                  setSubmitMessage(`❌ Export failed: ${error.message}`)
-                }
-              }}
-              className="export-btn"
-            >
-              📤 Export Vehicles
-            </button>
-            <button 
-              type="button" 
-              onClick={async () => {
-                if (window.confirm('Are you sure you want to clear all stored vehicles?')) {
-                  try {
-                    await storageManager.clearAll()
-                    setStoredVehicles([])
-                    setSubmitMessage('✅ All vehicles cleared!')
-                  } catch (error) {
-                    setSubmitMessage(`❌ Clear failed: ${error.message}`)
-                  }
-                }
-              }}
-              className="clear-btn"
-            >
-              🗑️ Clear All
-            </button>
-          </div>
         </div>
         </>
         )}

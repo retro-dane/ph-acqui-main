@@ -1,38 +1,11 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import { useVehicles } from '../hooks/useVehicles'
 import CarPlaceholder from './CarPlaceholder'
 
 const FeaturedCars = () => {
-  // Get markdown vehicles from GraphQL
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        nodes {
-          id
-          frontmatter {
-            make
-            model
-            year
-            price
-            mileage
-            condition
-            transmission
-            fuelType
-            featuredImage {
-              publicURL
-            }
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `)
-
-  const markdownVehicles = data.allMarkdownRemark.nodes
-  const { allVehicles, isLoaded } = useVehicles(markdownVehicles)
+  // Get vehicles from Firebase only (no more markdown files)
+  const { allVehicles, isLoaded } = useVehicles([])
 
   // Select featured vehicles (up to 5)
   const getFeaturedVehicles = () => {
