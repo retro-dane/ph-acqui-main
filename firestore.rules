@@ -1,0 +1,40 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Vehicles collection - allow read/write for authenticated admins
+    match /vehicles/{vehicleId} {
+      // Allow anyone to read vehicles (for public-facing inventory)
+      allow read: if true;
+
+      // Allow write operations for authenticated users
+      allow write: if request.auth != null;
+    }
+
+    // Users collection - for user management
+    match /users/{userId} {
+      // Allow users to read their own profile
+      allow read: if request.auth != null && request.auth.uid == userId;
+
+      // Allow creating new users (for setup page) with required fields
+      allow create: if request.resource.data.username is string &&
+                       request.resource.data.email is string &&
+                       request.resource.data.email.matches('.*@.*[.].*') &&
+                       request.resource.data.createdAt is string &&
+                       request.resource.data.role is string &&
+                       request.resource.data.active is bool;
+
+      // Allow users to update their own profile
+      allow update: if request.auth != null && request.auth.uid == userId;
+
+      // Only allow admins to delete users (future enhancement)
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Deny access to all other collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

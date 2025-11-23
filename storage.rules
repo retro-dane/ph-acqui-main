@@ -1,0 +1,24 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Allow read access to all vehicle images (for public display)
+    match /vehicles/{vehicleId}/{allPaths=**} {
+      allow read: if true;
+
+      // Allow write access for uploading vehicle images
+      // TODO: Add authentication when admin login is implemented
+      allow write: if true;
+
+      // Validate file size (max 5MB) and type (images only)
+      allow write: if request.resource.size < 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+
+    // Deny access to all other paths by default
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

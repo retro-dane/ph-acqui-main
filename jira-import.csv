@@ -1,0 +1,294 @@
+Issue Type,Summary,Description,Story Points,Priority,Labels,Sprint,Parent,Assignee,Time Estimate
+Epic,Backend Infrastructure & Data Management,Set up production-ready backend infrastructure including Firebase database and storage solutions,,,backend;infrastructure;firebase,,,
+Story,Firebase Production Configuration,"As a dealership admin I need my inventory data to persist in the cloud So that vehicles are available across all devices and browsers
+
+Acceptance Criteria:
+- Firebase project created in production mode
+- Firestore database configured with proper collections
+- Security rules implemented and tested
+- Environment variables configured for production
+- Admin dashboard successfully connects to Firebase
+- Data persists after browser refresh/logout",8,Highest,firebase;database;backend,Sprint 1,Backend Infrastructure & Data Management,,
+Task,Create Firebase project in console,Set up new Firebase project for PH Aqui production,,,firebase,Sprint 1,Firebase Production Configuration,,1h
+Task,Configure Firestore database structure,Create vehicles collection with proper schema and indexes,,,database,Sprint 1,Firebase Production Configuration,,2h
+Task,Implement Firestore security rules,Write and deploy security rules for read/write permissions,,,firebase;security,Sprint 1,Firebase Production Configuration,,2h
+Task,Create production environment variables,Set up .env.production with Firebase config,,,configuration,Sprint 1,Firebase Production Configuration,,1h
+Task,Test Firebase connection in admin dashboard,Verify CRUD operations work with real Firebase backend,,,testing,Sprint 1,Firebase Production Configuration,,2h
+Task,Document Firebase setup process,Update documentation with setup instructions,,,documentation,Sprint 1,Firebase Production Configuration,,1h
+Story,Firebase Storage Setup for Vehicle Images,"As a dealership admin I need to upload and store vehicle images in the cloud So that images are accessible and properly managed
+
+Acceptance Criteria:
+- Firebase Storage bucket created
+- Storage security rules implemented
+- Image upload functionality works in admin panel
+- Images are optimized before upload
+- Thumbnails generated automatically
+- Old images are cleaned up when vehicles are deleted",5,Highest,firebase;storage;images,Sprint 1,Backend Infrastructure & Data Management,,
+Task,Create Firebase Storage bucket,Set up storage bucket with proper configuration,,,firebase;storage,Sprint 1,Firebase Storage Setup for Vehicle Images,,1h
+Task,Implement storage security rules,Configure upload/download permissions,,,firebase;security,Sprint 1,Firebase Storage Setup for Vehicle Images,,2h
+Task,Test image upload with MultiImageUpload component,Verify thumbnail and gallery image uploads work,,,testing,Sprint 1,Firebase Storage Setup for Vehicle Images,,2h
+Task,Implement image cleanup on vehicle deletion,Delete associated images when vehicle is removed,,,backend,Sprint 1,Firebase Storage Setup for Vehicle Images,,2h
+Story,Data Migration from localStorage to Firestore,"As a developer I need to migrate any existing vehicle data to Firestore So that we don't lose test inventory during transition
+
+Acceptance Criteria:
+- Export script created for localStorage data
+- Import script validates data before migration
+- All existing vehicles migrated successfully
+- Images transferred to Firebase Storage
+- Data integrity verified",3,High,migration;data,Sprint 1,Backend Infrastructure & Data Management,,
+Task,Create data export utility,Build script to export vehicles from localStorage,,,migration,Sprint 1,Data Migration from localStorage to Firestore,,2h
+Task,Create data import utility,Build script to import vehicles into Firestore,,,migration,Sprint 1,Data Migration from localStorage to Firestore,,2h
+Task,Verify data migration,Test that all data transferred correctly,,,testing,Sprint 1,Data Migration from localStorage to Firestore,,1h
+Epic,Customer Communication Features,Enable customers to contact dealership and schedule appointments,,,frontend;customer-experience;forms,,,
+Story,Contact Form Backend Integration,"As a potential customer I want to submit inquiries through the contact form So that the dealership can contact me back
+
+Acceptance Criteria:
+- Form submissions send emails to dealership email
+- Customer receives confirmation email
+- Form validates all required fields
+- reCAPTCHA prevents spam submissions
+- Error handling displays helpful messages
+- Success message confirms submission",8,Highest,contact;email;forms,Sprint 1,Customer Communication Features,,
+Task,Choose email service provider,Evaluate and select between SendGrid Netlify Forms or Firebase Functions,,,research,Sprint 1,Contact Form Backend Integration,,1h
+Task,Set up email service integration,Configure API keys and templates,,,email;configuration,Sprint 1,Contact Form Backend Integration,,2h
+Task,Implement form validation,Add client-side and server-side validation,,,forms;validation,Sprint 1,Contact Form Backend Integration,,2h
+Task,Add reCAPTCHA to contact form,Integrate Google reCAPTCHA v3,,,security;forms,Sprint 1,Contact Form Backend Integration,,2h
+Task,Create email templates,Design customer confirmation and admin notification emails,,,email;design,Sprint 1,Contact Form Backend Integration,,2h
+Task,Test complete form submission flow,End-to-end testing of form submission,,,testing,Sprint 1,Contact Form Backend Integration,,2h
+Story,Test Drive Scheduling Feature,"As a customer I want to schedule a test drive for a specific vehicle So that I can experience the car before purchasing
+
+Acceptance Criteria:
+- Test drive form on vehicle detail pages
+- Date and time picker implemented
+- Calendar shows available slots
+- Confirmation email sent to customer
+- Admin receives test drive notification
+- Form pre-fills vehicle information",13,High,scheduling;customer-experience,Sprint 2,Customer Communication Features,,
+Task,Design test drive form UI,Create mockup and implement form component,,,design;forms,Sprint 2,Test Drive Scheduling Feature,,3h
+Task,Implement date/time picker,Add calendar component for appointment selection,,,frontend,Sprint 2,Test Drive Scheduling Feature,,3h
+Task,Create scheduling backend logic,Store appointments in Firestore,,,backend;database,Sprint 2,Test Drive Scheduling Feature,,3h
+Task,Add email notifications for test drives,Send confirmations to customer and admin,,,email,Sprint 2,Test Drive Scheduling Feature,,2h
+Task,Test complete scheduling workflow,End-to-end testing,,,testing,Sprint 2,Test Drive Scheduling Feature,,2h
+Epic,Vehicle Display & Navigation,Optimize vehicle detail pages and inventory browsing,,,frontend;vehicles;ux,,,
+Story,Vehicle Detail Page Enhancement,"As a customer I want to see detailed vehicle information with multiple photos So that I can make informed purchasing decisions
+
+Acceptance Criteria:
+- Dynamic routing works for all vehicles
+- Image gallery with lightbox functionality
+- Social sharing buttons (Facebook Twitter Email)
+- Schedule Test Drive CTA prominent
+- Breadcrumb navigation implemented
+- Related vehicles section displays
+- Print-friendly vehicle details",13,High,vehicles;frontend;ux,Sprint 2,Vehicle Display & Navigation,,
+Task,Fix dynamic vehicle routing,Ensure /vehicle/[id].js works for all vehicles,,,routing;bug,Sprint 2,Vehicle Detail Page Enhancement,,2h
+Task,Implement image gallery with lightbox,Add react-image-lightbox or similar,,,frontend;images,Sprint 2,Vehicle Detail Page Enhancement,,3h
+Task,Add social sharing functionality,Implement share buttons with proper metadata,,,frontend;social,Sprint 2,Vehicle Detail Page Enhancement,,2h
+Task,Create breadcrumb navigation component,Add Home > Inventory > Vehicle breadcrumbs,,,frontend;navigation,Sprint 2,Vehicle Detail Page Enhancement,,2h
+Task,Implement related vehicles section,Show similar vehicles based on make/model/price,,,frontend;recommendation,Sprint 2,Vehicle Detail Page Enhancement,,3h
+Task,Add print stylesheet,Create print-friendly version of vehicle details,,,css;print,Sprint 2,Vehicle Detail Page Enhancement,,2h
+Story,Inventory Filtering and Search,"As a customer I want to filter vehicles by make model price year So that I can quickly find cars that match my criteria
+
+Acceptance Criteria:
+- Filter by make and model
+- Price range slider
+- Year range filter
+- Condition filter (Excellent Good Fair)
+- Fuel type filter
+- Results update in real-time
+- Filter state persists in URL",13,Medium,inventory;search;filters,Sprint 2,Vehicle Display & Navigation,,
+Task,Design filter UI component,Create filter sidebar or panel,,,design;frontend,Sprint 2,Inventory Filtering and Search,,3h
+Task,Implement make/model filters,Dropdown or checkbox filters,,,frontend,Sprint 2,Inventory Filtering and Search,,2h
+Task,Add price range slider,Implement range slider component,,,frontend,Sprint 2,Inventory Filtering and Search,,2h
+Task,Implement filter logic,Filter vehicles based on selected criteria,,,frontend;logic,Sprint 2,Inventory Filtering and Search,,3h
+Task,Add URL state management,Sync filters with query parameters,,,frontend;routing,Sprint 2,Inventory Filtering and Search,,2h
+Task,Add sort functionality,Sort by price year mileage,,,frontend,Sprint 2,Inventory Filtering and Search,,2h
+Epic,SEO & Performance Optimization,Optimize site for search engines and fast loading,,,seo;performance;optimization,,,
+Story,SEO Optimization,"As the business owner I need the site to rank well in search engines So that customers can find us organically
+
+Acceptance Criteria:
+- All pages have unique title tags
+- All pages have meta descriptions
+- Open Graph tags for social sharing
+- Twitter Card tags implemented
+- Sitemap.xml generated
+- Robots.txt configured
+- Structured data for vehicles (Schema.org)
+- Canonical URLs set",8,High,seo;metadata,Sprint 2,SEO & Performance Optimization,,
+Task,Add react-helmet meta tags to all pages,Implement unique titles and descriptions,,,seo;frontend,Sprint 2,SEO Optimization,,3h
+Task,Implement Open Graph tags,Add OG tags for Facebook/LinkedIn sharing,,,seo;social,Sprint 2,SEO Optimization,,2h
+Task,Create sitemap.xml,Use gatsby-plugin-sitemap,,,seo,Sprint 2,SEO Optimization,,1h
+Task,Configure robots.txt,Set up proper crawling rules,,,seo,Sprint 2,SEO Optimization,,1h
+Task,Add structured data for vehicles,Implement Schema.org Vehicle markup,,,seo;structured-data,Sprint 2,SEO Optimization,,3h
+Task,Test SEO with tools,Verify with Google Search Console SEMrush,,,seo;testing,Sprint 2,SEO Optimization,,2h
+Story,Performance Optimization,"As a user I want pages to load quickly So that I have a smooth browsing experience
+
+Acceptance Criteria:
+- Lighthouse Performance score >90
+- Images optimized with WebP format
+- Lazy loading implemented
+- Code splitting configured
+- CSS minified
+- JavaScript minified
+- CDN configured for assets
+- Caching headers set",13,High,performance;optimization,Sprint 2,SEO & Performance Optimization,,
+Task,Configure gatsby-plugin-image,Optimize all images with Gatsby Image,,,performance;images,Sprint 2,Performance Optimization,,3h
+Task,Implement lazy loading,Lazy load images and components,,,performance;frontend,Sprint 2,Performance Optimization,,2h
+Task,Enable code splitting,Optimize bundle sizes with dynamic imports,,,performance;optimization,Sprint 2,Performance Optimization,,2h
+Task,Run Lighthouse audit,Identify and fix performance issues,,,performance;testing,Sprint 2,Performance Optimization,,3h
+Task,Optimize CSS delivery,Remove unused CSS minify,,,performance;css,Sprint 2,Performance Optimization,,2h
+Task,Configure caching headers,Set up proper cache control in Netlify,,,performance;deployment,Sprint 2,Performance Optimization,,1h
+Epic,Mobile & Responsive Design,Ensure excellent experience on all mobile devices,,,mobile;responsive;ux,,,
+Story,Mobile Responsive Design,"As a mobile user I want a seamless browsing experience on my phone So that I can browse inventory anywhere
+
+Acceptance Criteria:
+- All pages responsive on mobile (320px - 768px)
+- Navigation works smoothly on mobile
+- Forms are easy to complete on mobile
+- Images scale properly
+- Touch targets are at least 44x44px
+- No horizontal scrolling
+- Text is readable without zooming",8,High,mobile;responsive;css,Sprint 3,Mobile & Responsive Design,,
+Task,Test homepage on mobile devices,Test on iOS and Android devices,,,mobile;testing,Sprint 3,Mobile Responsive Design,,2h
+Task,Fix mobile navigation issues,Ensure hamburger menu works properly,,,mobile;navigation,Sprint 3,Mobile Responsive Design,,2h
+Task,Optimize forms for mobile,Improve touch targets and input fields,,,mobile;forms,Sprint 3,Mobile Responsive Design,,2h
+Task,Test image galleries on mobile,Ensure swipe gestures work,,,mobile;images,Sprint 3,Mobile Responsive Design,,1h
+Task,Fix any CSS breakpoint issues,Adjust media queries as needed,,,mobile;css,Sprint 3,Mobile Responsive Design,,2h
+Task,Cross-browser mobile testing,Test on Safari iOS Chrome Android,,,mobile;testing,Sprint 3,Mobile Responsive Design,,2h
+Story,Progressive Web App (PWA) Features,"As a mobile user I want to install the app on my home screen So that I can access it quickly like a native app
+
+Acceptance Criteria:
+- Web app manifest configured
+- App icons created (multiple sizes)
+- Offline fallback page created
+- Install prompt works
+- App loads from home screen
+- Service worker registered",5,Medium,pwa;mobile,Sprint 3,Mobile & Responsive Design,,
+Task,Configure gatsby-plugin-manifest,Set up web app manifest,,,pwa;configuration,Sprint 3,Progressive Web App (PWA) Features,,1h
+Task,Create app icons,Generate icons in all required sizes,,,pwa;design,Sprint 3,Progressive Web App (PWA) Features,,2h
+Task,Implement offline page,Create fallback page for offline use,,,pwa;frontend,Sprint 3,Progressive Web App (PWA) Features,,2h
+Task,Test PWA installation,Verify install to home screen works,,,pwa;testing,Sprint 3,Progressive Web App (PWA) Features,,1h
+Epic,Accessibility Compliance,Make site accessible to users with disabilities,,,accessibility;a11y;compliance,,,
+Story,WCAG 2.1 Level AA Compliance,"As a user with disabilities I want to access the site using assistive technologies So that I can browse vehicles independently
+
+Acceptance Criteria:
+- All images have alt text
+- Forms have proper labels
+- ARIA labels on interactive elements
+- Keyboard navigation works throughout site
+- Color contrast meets WCAG standards
+- Skip-to-content links present
+- Focus indicators visible
+- Screen reader compatible",13,High,accessibility;wcag;compliance,Sprint 3,Accessibility Compliance,,
+Task,Add alt text to all images,Write descriptive alt text for vehicle images,,,accessibility;images,Sprint 3,WCAG 2.1 Level AA Compliance,,2h
+Task,Implement ARIA labels,Add ARIA attributes to navigation forms buttons,,,accessibility;aria,Sprint 3,WCAG 2.1 Level AA Compliance,,3h
+Task,Ensure keyboard navigation,Test and fix tab order focus management,,,accessibility;keyboard,Sprint 3,WCAG 2.1 Level AA Compliance,,3h
+Task,Fix color contrast issues,Adjust colors to meet 4.5:1 ratio,,,accessibility;css,Sprint 3,WCAG 2.1 Level AA Compliance,,2h
+Task,Add skip-to-content links,Implement skip navigation for keyboard users,,,accessibility;navigation,Sprint 3,WCAG 2.1 Level AA Compliance,,1h
+Task,Screen reader testing,Test with NVDA and VoiceOver,,,accessibility;testing,Sprint 3,WCAG 2.1 Level AA Compliance,,3h
+Task,Run accessibility audit,Use axe DevTools and WAVE,,,accessibility;testing,Sprint 3,WCAG 2.1 Level AA Compliance,,2h
+Epic,Deployment & DevOps,Deploy site to production with proper CI/CD,,,deployment;devops;infrastructure,,,
+Story,Netlify Production Deployment,"As the business owner I want the website live and accessible to customers So that I can start receiving inquiries and selling cars
+
+Acceptance Criteria:
+- Site deployed to Netlify
+- Custom domain configured
+- SSL certificate active (HTTPS)
+- Environment variables set in Netlify
+- Build previews configured for PRs
+- Redirects and headers configured
+- Forms working in production
+- Firebase connected in production",8,Highest,deployment;netlify;production,Sprint 4,Deployment & DevOps,,
+Task,Connect GitHub repo to Netlify,Set up automatic deployments,,,deployment;git,Sprint 4,Netlify Production Deployment,,1h
+Task,Configure build settings,Set build command and publish directory,,,deployment;configuration,Sprint 4,Netlify Production Deployment,,1h
+Task,Set environment variables,Add Firebase and other secrets to Netlify,,,deployment;configuration,Sprint 4,Netlify Production Deployment,,1h
+Task,Configure custom domain,Set up DNS and domain in Netlify,,,deployment;dns,Sprint 4,Netlify Production Deployment,,2h
+Task,Enable SSL certificate,Activate HTTPS with Let's Encrypt,,,deployment;security,Sprint 4,Netlify Production Deployment,,1h
+Task,Configure redirects,Set up _redirects file for SPA routing,,,deployment;routing,Sprint 4,Netlify Production Deployment,,1h
+Task,Test production deployment,Full end-to-end testing in production,,,deployment;testing,Sprint 4,Netlify Production Deployment,,3h
+Story,Monitoring and Analytics Setup,"As the business owner I want to track site performance and user behavior So that I can make data-driven decisions
+
+Acceptance Criteria:
+- Google Analytics 4 installed
+- Conversion tracking configured
+- Error monitoring active (Sentry)
+- Uptime monitoring configured
+- Performance monitoring active
+- Custom events tracked (form submissions test drives)",8,High,analytics;monitoring,Sprint 4,Deployment & DevOps,,
+Task,Set up Google Analytics 4,Create GA4 property and add tracking code,,,analytics,Sprint 4,Monitoring and Analytics Setup,,2h
+Task,Configure conversion tracking,Track form submissions and key actions,,,analytics,Sprint 4,Monitoring and Analytics Setup,,2h
+Task,Set up Sentry error monitoring,Install and configure Sentry,,,monitoring;errors,Sprint 4,Monitoring and Analytics Setup,,2h
+Task,Configure uptime monitoring,Set up monitoring with UptimeRobot or similar,,,monitoring,Sprint 4,Monitoring and Analytics Setup,,1h
+Task,Set up performance monitoring,Configure Lighthouse CI or similar,,,monitoring;performance,Sprint 4,Monitoring and Analytics Setup,,2h
+Epic,Documentation & Training,Create documentation and train staff,,,documentation;training,,,
+Story,Admin User Documentation,"As a dealership staff member I need clear documentation on how to manage inventory So that I can independently update the website
+
+Acceptance Criteria:
+- Written user guide with screenshots
+- Video tutorials for common tasks
+- Troubleshooting guide created
+- FAQ section included
+- Quick reference guide
+- Best practices documented",8,High,documentation;training,Sprint 4,Documentation & Training,,
+Task,Write admin dashboard guide,Document all admin features with screenshots,,,documentation,Sprint 4,Admin User Documentation,,4h
+Task,Create video tutorials,Record 5-10 min videos for key tasks,,,documentation;video,Sprint 4,Admin User Documentation,,4h
+Task,Write troubleshooting guide,Document common issues and solutions,,,documentation,Sprint 4,Admin User Documentation,,2h
+Task,Create FAQ section,Answer frequently asked questions,,,documentation,Sprint 4,Admin User Documentation,,2h
+Story,Staff Training Sessions,"As a staff member I need training on how to use the system So that I can manage inventory confidently
+
+Acceptance Criteria:
+- Training session conducted
+- All staff members trained
+- Practice exercises completed
+- Support contact established
+- Admin accounts created for staff",5,High,training,Sprint 4,Documentation & Training,,
+Task,Prepare training materials,Create slides and demo scenarios,,,training;preparation,Sprint 4,Staff Training Sessions,,2h
+Task,Conduct training session,2-hour training workshop,,,training,Sprint 4,Staff Training Sessions,,2h
+Task,Create staff admin accounts,Set up Firebase auth for staff,,,training;setup,Sprint 4,Staff Training Sessions,,1h
+Task,Provide post-training support,Answer questions and provide assistance,,,training;support,Sprint 4,Staff Training Sessions,,2h
+Epic,Quality Assurance & Testing,Comprehensive testing before launch,,,qa;testing,,,
+Story,Pre-Launch Testing Checklist,"As the development team We need to test all functionality thoroughly So that the site launches without critical bugs
+
+Acceptance Criteria:
+- All user journeys tested
+- Cross-browser testing completed
+- Mobile device testing done
+- Form submissions verified
+- Payment/inquiry flows tested
+- Admin functions verified
+- SEO verified
+- Analytics verified",13,Highest,qa;testing;launch,Sprint 4,Quality Assurance & Testing,,
+Task,Create testing checklist,Comprehensive list of all features to test,,,qa;planning,Sprint 4,Pre-Launch Testing Checklist,,2h
+Task,Test all user journeys,Browse inventory view details contact etc.,,,qa;testing,Sprint 4,Pre-Launch Testing Checklist,,4h
+Task,Cross-browser testing,Test on Chrome Firefox Safari Edge,,,qa;testing;browsers,Sprint 4,Pre-Launch Testing Checklist,,3h
+Task,Mobile device testing,Test on actual iOS and Android devices,,,qa;testing;mobile,Sprint 4,Pre-Launch Testing Checklist,,3h
+Task,Admin panel testing,Test all CRUD operations,,,qa;testing;admin,Sprint 4,Pre-Launch Testing Checklist,,2h
+Task,Performance testing,Run Lighthouse on all pages,,,qa;testing;performance,Sprint 4,Pre-Launch Testing Checklist,,2h
+Epic,Launch & Post-Launch,Final launch preparation and go-live,,,launch;production,,,
+Story,Launch Preparation,"As the project team We need to prepare for launch So that the go-live is smooth
+
+Acceptance Criteria:
+- Launch checklist completed
+- Backup strategy in place
+- Rollback plan documented
+- Support process established
+- Launch communications prepared
+- Social media posts ready
+- Google My Business updated",8,Highest,launch;planning,Sprint 4,Launch & Post-Launch,,
+Task,Create launch checklist,Final go-live verification list,,,launch;planning,Sprint 4,Launch Preparation,,2h
+Task,Set up backup strategy,Configure automated backups,,,backup;deployment,Sprint 4,Launch Preparation,,2h
+Task,Document rollback plan,Steps to revert if issues occur,,,deployment;planning,Sprint 4,Launch Preparation,,1h
+Task,Prepare launch communications,Email social media press release,,,marketing;communications,Sprint 4,Launch Preparation,,3h
+Task,Update Google My Business,Add new website URL,,,seo;marketing,Sprint 4,Launch Preparation,,1h
+Story,Post-Launch Monitoring,"As the development team We need to monitor the site after launch So that we can quickly address any issues
+
+Acceptance Criteria:
+- 24-hour monitoring post-launch
+- Error logs reviewed
+- Performance metrics tracked
+- User feedback collected
+- Quick fixes deployed as needed
+- Success metrics documented",5,Highest,launch;monitoring,Sprint 4,Launch & Post-Launch,,
+Task,Monitor error logs,Check Sentry for errors first 24 hours,,,monitoring;errors,Sprint 4,Post-Launch Monitoring,,4h
+Task,Review analytics,Check GA4 for traffic and conversions,,,analytics;monitoring,Sprint 4,Post-Launch Monitoring,,2h
+Task,Collect user feedback,Gather feedback from staff and customers,,,feedback,Sprint 4,Post-Launch Monitoring,,2h
+Task,Address critical issues,Fix any urgent bugs discovered,,,bug;hotfix,Sprint 4,Post-Launch Monitoring,,4h

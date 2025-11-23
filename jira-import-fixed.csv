@@ -1,0 +1,130 @@
+Issue ID,Issue Type,Summary,Description,Story Points,Priority,Labels,Sprint,Epic Link,Parent ID,Assignee,Original Estimate
+EPIC-1,Epic,Backend Infrastructure & Data Management,Set up production-ready backend infrastructure including Firebase database and storage solutions,,,backend;infrastructure;firebase,,,,
+STORY-1.1,Story,Firebase Production Configuration,"As a dealership admin I need my inventory data to persist in the cloud So that vehicles are available across all devices and browsers. Acceptance Criteria: Firebase project created in production mode | Firestore database configured | Security rules implemented | Environment variables configured | Admin dashboard connects to Firebase | Data persists after browser refresh",8,Highest,firebase;database;backend,Sprint 1,EPIC-1,,
+TASK-1.1.1,Task,Create Firebase project in console,Set up new Firebase project for PH Aqui production,,,firebase,Sprint 1,,STORY-1.1,,1h
+TASK-1.1.2,Task,Configure Firestore database structure,Create vehicles collection with proper schema and indexes,,,database,Sprint 1,,STORY-1.1,,2h
+TASK-1.1.3,Task,Implement Firestore security rules,Write and deploy security rules for read/write permissions,,,firebase;security,Sprint 1,,STORY-1.1,,2h
+TASK-1.1.4,Task,Create production environment variables,Set up .env.production with Firebase config,,,configuration,Sprint 1,,STORY-1.1,,1h
+TASK-1.1.5,Task,Test Firebase connection in admin dashboard,Verify CRUD operations work with real Firebase backend,,,testing,Sprint 1,,STORY-1.1,,2h
+TASK-1.1.6,Task,Document Firebase setup process,Update documentation with setup instructions,,,documentation,Sprint 1,,STORY-1.1,,1h
+STORY-1.2,Story,Firebase Storage Setup for Vehicle Images,"As a dealership admin I need to upload and store vehicle images in the cloud So that images are accessible and properly managed. Acceptance Criteria: Firebase Storage bucket created | Storage security rules implemented | Image upload works in admin panel | Images optimized before upload | Thumbnails generated automatically | Old images cleaned up on deletion",5,Highest,firebase;storage;images,Sprint 1,EPIC-1,,
+TASK-1.2.1,Task,Create Firebase Storage bucket,Set up storage bucket with proper configuration,,,firebase;storage,Sprint 1,,STORY-1.2,,1h
+TASK-1.2.2,Task,Implement storage security rules,Configure upload/download permissions,,,firebase;security,Sprint 1,,STORY-1.2,,2h
+TASK-1.2.3,Task,Test image upload with MultiImageUpload component,Verify thumbnail and gallery image uploads work,,,testing,Sprint 1,,STORY-1.2,,2h
+TASK-1.2.4,Task,Implement image cleanup on vehicle deletion,Delete associated images when vehicle is removed,,,backend,Sprint 1,,STORY-1.2,,2h
+STORY-1.3,Story,Data Migration from localStorage to Firestore,"As a developer I need to migrate existing vehicle data to Firestore So that we don't lose test inventory during transition. Acceptance Criteria: Export script created for localStorage | Import script validates data | All vehicles migrated successfully | Images transferred to Firebase Storage | Data integrity verified",3,High,migration;data,Sprint 1,EPIC-1,,
+TASK-1.3.1,Task,Create data export utility,Build script to export vehicles from localStorage,,,migration,Sprint 1,,STORY-1.3,,2h
+TASK-1.3.2,Task,Create data import utility,Build script to import vehicles into Firestore,,,migration,Sprint 1,,STORY-1.3,,2h
+TASK-1.3.3,Task,Verify data migration,Test that all data transferred correctly,,,testing,Sprint 1,,STORY-1.3,,1h
+EPIC-2,Epic,Customer Communication Features,Enable customers to contact dealership and schedule appointments,,,frontend;customer-experience;forms,,,,
+STORY-2.1,Story,Contact Form Backend Integration,"As a potential customer I want to submit inquiries through the contact form So that the dealership can contact me back. Acceptance Criteria: Form submissions send emails to dealership | Customer receives confirmation email | Form validates all required fields | reCAPTCHA prevents spam | Error handling displays helpful messages | Success message confirms submission",8,Highest,contact;email;forms,Sprint 1,EPIC-2,,
+TASK-2.1.1,Task,Choose email service provider,Evaluate and select between SendGrid Netlify Forms or Firebase Functions,,,research,Sprint 1,,STORY-2.1,,1h
+TASK-2.1.2,Task,Set up email service integration,Configure API keys and templates,,,email;configuration,Sprint 1,,STORY-2.1,,2h
+TASK-2.1.3,Task,Implement form validation,Add client-side and server-side validation,,,forms;validation,Sprint 1,,STORY-2.1,,2h
+TASK-2.1.4,Task,Add reCAPTCHA to contact form,Integrate Google reCAPTCHA v3,,,security;forms,Sprint 1,,STORY-2.1,,2h
+TASK-2.1.5,Task,Create email templates,Design customer confirmation and admin notification emails,,,email;design,Sprint 1,,STORY-2.1,,2h
+TASK-2.1.6,Task,Test complete form submission flow,End-to-end testing of form submission,,,testing,Sprint 1,,STORY-2.1,,2h
+STORY-2.2,Story,Test Drive Scheduling Feature,"As a customer I want to schedule a test drive for a specific vehicle So that I can experience the car before purchasing. Acceptance Criteria: Test drive form on vehicle detail pages | Date and time picker implemented | Calendar shows available slots | Confirmation email sent to customer | Admin receives test drive notification | Form pre-fills vehicle information",13,High,scheduling;customer-experience,Sprint 2,EPIC-2,,
+TASK-2.2.1,Task,Design test drive form UI,Create mockup and implement form component,,,design;forms,Sprint 2,,STORY-2.2,,3h
+TASK-2.2.2,Task,Implement date/time picker,Add calendar component for appointment selection,,,frontend,Sprint 2,,STORY-2.2,,3h
+TASK-2.2.3,Task,Create scheduling backend logic,Store appointments in Firestore,,,backend;database,Sprint 2,,STORY-2.2,,3h
+TASK-2.2.4,Task,Add email notifications for test drives,Send confirmations to customer and admin,,,email,Sprint 2,,STORY-2.2,,2h
+TASK-2.2.5,Task,Test complete scheduling workflow,End-to-end testing,,,testing,Sprint 2,,STORY-2.2,,2h
+EPIC-3,Epic,Vehicle Display & Navigation,Optimize vehicle detail pages and inventory browsing,,,frontend;vehicles;ux,,,,
+STORY-3.1,Story,Vehicle Detail Page Enhancement,"As a customer I want to see detailed vehicle information with multiple photos So that I can make informed purchasing decisions. Acceptance Criteria: Dynamic routing works for all vehicles | Image gallery with lightbox functionality | Social sharing buttons (Facebook Twitter Email) | Schedule Test Drive CTA prominent | Breadcrumb navigation implemented | Related vehicles section displays | Print-friendly vehicle details",13,High,vehicles;frontend;ux,Sprint 2,EPIC-3,,
+TASK-3.1.1,Task,Fix dynamic vehicle routing,Ensure /vehicle/[id].js works for all vehicles,,,routing;bug,Sprint 2,,STORY-3.1,,2h
+TASK-3.1.2,Task,Implement image gallery with lightbox,Add react-image-lightbox or similar library,,,frontend;images,Sprint 2,,STORY-3.1,,3h
+TASK-3.1.3,Task,Add social sharing functionality,Implement share buttons with proper metadata,,,frontend;social,Sprint 2,,STORY-3.1,,2h
+TASK-3.1.4,Task,Create breadcrumb navigation component,Add Home > Inventory > Vehicle breadcrumbs,,,frontend;navigation,Sprint 2,,STORY-3.1,,2h
+TASK-3.1.5,Task,Implement related vehicles section,Show similar vehicles based on make/model/price,,,frontend;recommendation,Sprint 2,,STORY-3.1,,3h
+TASK-3.1.6,Task,Add print stylesheet,Create print-friendly version of vehicle details,,,css;print,Sprint 2,,STORY-3.1,,2h
+STORY-3.2,Story,Inventory Filtering and Search,"As a customer I want to filter vehicles by make model price year So that I can quickly find cars that match my criteria. Acceptance Criteria: Filter by make and model | Price range slider | Year range filter | Condition filter (Excellent Good Fair) | Fuel type filter | Results update in real-time | Filter state persists in URL",13,Medium,inventory;search;filters,Sprint 2,EPIC-3,,
+TASK-3.2.1,Task,Design filter UI component,Create filter sidebar or panel,,,design;frontend,Sprint 2,,STORY-3.2,,3h
+TASK-3.2.2,Task,Implement make/model filters,Dropdown or checkbox filters,,,frontend,Sprint 2,,STORY-3.2,,2h
+TASK-3.2.3,Task,Add price range slider,Implement range slider component,,,frontend,Sprint 2,,STORY-3.2,,2h
+TASK-3.2.4,Task,Implement filter logic,Filter vehicles based on selected criteria,,,frontend;logic,Sprint 2,,STORY-3.2,,3h
+TASK-3.2.5,Task,Add URL state management,Sync filters with query parameters,,,frontend;routing,Sprint 2,,STORY-3.2,,2h
+TASK-3.2.6,Task,Add sort functionality,Sort by price year mileage,,,frontend,Sprint 2,,STORY-3.2,,2h
+EPIC-4,Epic,SEO & Performance Optimization,Optimize site for search engines and fast loading,,,seo;performance;optimization,,,,
+STORY-4.1,Story,SEO Optimization,"As the business owner I need the site to rank well in search engines So that customers can find us organically. Acceptance Criteria: All pages have unique title tags | All pages have meta descriptions | Open Graph tags for social sharing | Twitter Card tags implemented | Sitemap.xml generated | Robots.txt configured | Structured data for vehicles (Schema.org) | Canonical URLs set",8,High,seo;metadata,Sprint 2,EPIC-4,,
+TASK-4.1.1,Task,Add react-helmet meta tags to all pages,Implement unique titles and descriptions for every page,,,seo;frontend,Sprint 2,,STORY-4.1,,3h
+TASK-4.1.2,Task,Implement Open Graph tags,Add OG tags for Facebook/LinkedIn sharing,,,seo;social,Sprint 2,,STORY-4.1,,2h
+TASK-4.1.3,Task,Create sitemap.xml,Use gatsby-plugin-sitemap to generate sitemap,,,seo,Sprint 2,,STORY-4.1,,1h
+TASK-4.1.4,Task,Configure robots.txt,Set up proper crawling rules,,,seo,Sprint 2,,STORY-4.1,,1h
+TASK-4.1.5,Task,Add structured data for vehicles,Implement Schema.org Vehicle markup,,,seo;structured-data,Sprint 2,,STORY-4.1,,3h
+TASK-4.1.6,Task,Test SEO with tools,Verify with Google Search Console and SEMrush,,,seo;testing,Sprint 2,,STORY-4.1,,2h
+STORY-4.2,Story,Performance Optimization,"As a user I want pages to load quickly So that I have a smooth browsing experience. Acceptance Criteria: Lighthouse Performance score >90 | Images optimized with WebP format | Lazy loading implemented | Code splitting configured | CSS minified | JavaScript minified | CDN configured for assets | Caching headers set",13,High,performance;optimization,Sprint 2,EPIC-4,,
+TASK-4.2.1,Task,Configure gatsby-plugin-image,Optimize all images with Gatsby Image plugin,,,performance;images,Sprint 2,,STORY-4.2,,3h
+TASK-4.2.2,Task,Implement lazy loading,Lazy load images and components,,,performance;frontend,Sprint 2,,STORY-4.2,,2h
+TASK-4.2.3,Task,Enable code splitting,Optimize bundle sizes with dynamic imports,,,performance;optimization,Sprint 2,,STORY-4.2,,2h
+TASK-4.2.4,Task,Run Lighthouse audit,Identify and fix performance issues,,,performance;testing,Sprint 2,,STORY-4.2,,3h
+TASK-4.2.5,Task,Optimize CSS delivery,Remove unused CSS and minify,,,performance;css,Sprint 2,,STORY-4.2,,2h
+TASK-4.2.6,Task,Configure caching headers,Set up proper cache control in Netlify,,,performance;deployment,Sprint 2,,STORY-4.2,,1h
+EPIC-5,Epic,Mobile & Responsive Design,Ensure excellent experience on all mobile devices,,,mobile;responsive;ux,,,,
+STORY-5.1,Story,Mobile Responsive Design,"As a mobile user I want a seamless browsing experience on my phone So that I can browse inventory anywhere. Acceptance Criteria: All pages responsive on mobile (320px - 768px) | Navigation works smoothly on mobile | Forms are easy to complete on mobile | Images scale properly | Touch targets are at least 44x44px | No horizontal scrolling | Text is readable without zooming",8,High,mobile;responsive;css,Sprint 3,EPIC-5,,
+TASK-5.1.1,Task,Test homepage on mobile devices,Test on iOS and Android devices,,,mobile;testing,Sprint 3,,STORY-5.1,,2h
+TASK-5.1.2,Task,Fix mobile navigation issues,Ensure hamburger menu works properly,,,mobile;navigation,Sprint 3,,STORY-5.1,,2h
+TASK-5.1.3,Task,Optimize forms for mobile,Improve touch targets and input fields,,,mobile;forms,Sprint 3,,STORY-5.1,,2h
+TASK-5.1.4,Task,Test image galleries on mobile,Ensure swipe gestures work correctly,,,mobile;images,Sprint 3,,STORY-5.1,,1h
+TASK-5.1.5,Task,Fix any CSS breakpoint issues,Adjust media queries as needed,,,mobile;css,Sprint 3,,STORY-5.1,,2h
+TASK-5.1.6,Task,Cross-browser mobile testing,Test on Safari iOS and Chrome Android,,,mobile;testing,Sprint 3,,STORY-5.1,,2h
+STORY-5.2,Story,Progressive Web App (PWA) Features,"As a mobile user I want to install the app on my home screen So that I can access it quickly like a native app. Acceptance Criteria: Web app manifest configured | App icons created (multiple sizes) | Offline fallback page created | Install prompt works | App loads from home screen | Service worker registered",5,Medium,pwa;mobile,Sprint 3,EPIC-5,,
+TASK-5.2.1,Task,Configure gatsby-plugin-manifest,Set up web app manifest with app details,,,pwa;configuration,Sprint 3,,STORY-5.2,,1h
+TASK-5.2.2,Task,Create app icons,Generate icons in all required sizes (192x192 512x512),,,pwa;design,Sprint 3,,STORY-5.2,,2h
+TASK-5.2.3,Task,Implement offline page,Create fallback page for offline use,,,pwa;frontend,Sprint 3,,STORY-5.2,,2h
+TASK-5.2.4,Task,Test PWA installation,Verify install to home screen works on mobile,,,pwa;testing,Sprint 3,,STORY-5.2,,1h
+EPIC-6,Epic,Accessibility Compliance,Make site accessible to users with disabilities,,,accessibility;a11y;compliance,,,,
+STORY-6.1,Story,WCAG 2.1 Level AA Compliance,"As a user with disabilities I want to access the site using assistive technologies So that I can browse vehicles independently. Acceptance Criteria: All images have alt text | Forms have proper labels | ARIA labels on interactive elements | Keyboard navigation works throughout site | Color contrast meets WCAG standards | Skip-to-content links present | Focus indicators visible | Screen reader compatible",13,High,accessibility;wcag;compliance,Sprint 3,EPIC-6,,
+TASK-6.1.1,Task,Add alt text to all images,Write descriptive alt text for all vehicle images,,,accessibility;images,Sprint 3,,STORY-6.1,,2h
+TASK-6.1.2,Task,Implement ARIA labels,Add ARIA attributes to navigation forms and buttons,,,accessibility;aria,Sprint 3,,STORY-6.1,,3h
+TASK-6.1.3,Task,Ensure keyboard navigation,Test and fix tab order and focus management,,,accessibility;keyboard,Sprint 3,,STORY-6.1,,3h
+TASK-6.1.4,Task,Fix color contrast issues,Adjust colors to meet 4.5:1 contrast ratio,,,accessibility;css,Sprint 3,,STORY-6.1,,2h
+TASK-6.1.5,Task,Add skip-to-content links,Implement skip navigation for keyboard users,,,accessibility;navigation,Sprint 3,,STORY-6.1,,1h
+TASK-6.1.6,Task,Screen reader testing,Test with NVDA and VoiceOver screen readers,,,accessibility;testing,Sprint 3,,STORY-6.1,,3h
+TASK-6.1.7,Task,Run accessibility audit,Use axe DevTools and WAVE accessibility checker,,,accessibility;testing,Sprint 3,,STORY-6.1,,2h
+EPIC-7,Epic,Deployment & DevOps,Deploy site to production with proper CI/CD,,,deployment;devops;infrastructure,,,,
+STORY-7.1,Story,Netlify Production Deployment,"As the business owner I want the website live and accessible to customers So that I can start receiving inquiries and selling cars. Acceptance Criteria: Site deployed to Netlify | Custom domain configured | SSL certificate active (HTTPS) | Environment variables set in Netlify | Build previews configured for PRs | Redirects and headers configured | Forms working in production | Firebase connected in production",8,Highest,deployment;netlify;production,Sprint 4,EPIC-7,,
+TASK-7.1.1,Task,Connect GitHub repo to Netlify,Set up automatic deployments from GitHub,,,deployment;git,Sprint 4,,STORY-7.1,,1h
+TASK-7.1.2,Task,Configure build settings,Set build command and publish directory in Netlify,,,deployment;configuration,Sprint 4,,STORY-7.1,,1h
+TASK-7.1.3,Task,Set environment variables,Add Firebase and other secrets to Netlify dashboard,,,deployment;configuration,Sprint 4,,STORY-7.1,,1h
+TASK-7.1.4,Task,Configure custom domain,Set up DNS and domain in Netlify,,,deployment;dns,Sprint 4,,STORY-7.1,,2h
+TASK-7.1.5,Task,Enable SSL certificate,Activate HTTPS with Let's Encrypt,,,deployment;security,Sprint 4,,STORY-7.1,,1h
+TASK-7.1.6,Task,Configure redirects,Set up _redirects file for SPA routing,,,deployment;routing,Sprint 4,,STORY-7.1,,1h
+TASK-7.1.7,Task,Test production deployment,Full end-to-end testing in production environment,,,deployment;testing,Sprint 4,,STORY-7.1,,3h
+STORY-7.2,Story,Monitoring and Analytics Setup,"As the business owner I want to track site performance and user behavior So that I can make data-driven decisions. Acceptance Criteria: Google Analytics 4 installed | Conversion tracking configured | Error monitoring active (Sentry) | Uptime monitoring configured | Performance monitoring active | Custom events tracked (form submissions test drives)",8,High,analytics;monitoring,Sprint 4,EPIC-7,,
+TASK-7.2.1,Task,Set up Google Analytics 4,Create GA4 property and add tracking code to site,,,analytics,Sprint 4,,STORY-7.2,,2h
+TASK-7.2.2,Task,Configure conversion tracking,Track form submissions and key user actions,,,analytics,Sprint 4,,STORY-7.2,,2h
+TASK-7.2.3,Task,Set up Sentry error monitoring,Install and configure Sentry for error tracking,,,monitoring;errors,Sprint 4,,STORY-7.2,,2h
+TASK-7.2.4,Task,Configure uptime monitoring,Set up monitoring with UptimeRobot or similar service,,,monitoring,Sprint 4,,STORY-7.2,,1h
+TASK-7.2.5,Task,Set up performance monitoring,Configure Lighthouse CI or similar tool,,,monitoring;performance,Sprint 4,,STORY-7.2,,2h
+EPIC-8,Epic,Documentation & Training,Create documentation and train staff,,,documentation;training,,,,
+STORY-8.1,Story,Admin User Documentation,"As a dealership staff member I need clear documentation on how to manage inventory So that I can independently update the website. Acceptance Criteria: Written user guide with screenshots | Video tutorials for common tasks | Troubleshooting guide created | FAQ section included | Quick reference guide | Best practices documented",8,High,documentation;training,Sprint 4,EPIC-8,,
+TASK-8.1.1,Task,Write admin dashboard guide,Document all admin features with step-by-step screenshots,,,documentation,Sprint 4,,STORY-8.1,,4h
+TASK-8.1.2,Task,Create video tutorials,Record 5-10 minute videos for key tasks,,,documentation;video,Sprint 4,,STORY-8.1,,4h
+TASK-8.1.3,Task,Write troubleshooting guide,Document common issues and their solutions,,,documentation,Sprint 4,,STORY-8.1,,2h
+TASK-8.1.4,Task,Create FAQ section,Answer frequently asked questions from staff,,,documentation,Sprint 4,,STORY-8.1,,2h
+STORY-8.2,Story,Staff Training Sessions,"As a staff member I need training on how to use the system So that I can manage inventory confidently. Acceptance Criteria: Training session conducted | All staff members trained | Practice exercises completed | Support contact established | Admin accounts created for staff",5,High,training,Sprint 4,EPIC-8,,
+TASK-8.2.1,Task,Prepare training materials,Create slides and demo scenarios for training,,,training;preparation,Sprint 4,,STORY-8.2,,2h
+TASK-8.2.2,Task,Conduct training session,Run 2-hour hands-on training workshop,,,training,Sprint 4,,STORY-8.2,,2h
+TASK-8.2.3,Task,Create staff admin accounts,Set up Firebase authentication for all staff members,,,training;setup,Sprint 4,,STORY-8.2,,1h
+TASK-8.2.4,Task,Provide post-training support,Answer questions and provide assistance after training,,,training;support,Sprint 4,,STORY-8.2,,2h
+EPIC-9,Epic,Quality Assurance & Testing,Comprehensive testing before launch,,,qa;testing,,,,
+STORY-9.1,Story,Pre-Launch Testing Checklist,"As the development team We need to test all functionality thoroughly So that the site launches without critical bugs. Acceptance Criteria: All user journeys tested | Cross-browser testing completed | Mobile device testing done | Form submissions verified | Payment/inquiry flows tested | Admin functions verified | SEO verified | Analytics verified",13,Highest,qa;testing;launch,Sprint 4,EPIC-9,,
+TASK-9.1.1,Task,Create testing checklist,Create comprehensive list of all features to test,,,qa;planning,Sprint 4,,STORY-9.1,,2h
+TASK-9.1.2,Task,Test all user journeys,Test browsing inventory viewing details and contacting,,,qa;testing,Sprint 4,,STORY-9.1,,4h
+TASK-9.1.3,Task,Cross-browser testing,Test on Chrome Firefox Safari and Edge browsers,,,qa;testing;browsers,Sprint 4,,STORY-9.1,,3h
+TASK-9.1.4,Task,Mobile device testing,Test on actual iOS and Android devices,,,qa;testing;mobile,Sprint 4,,STORY-9.1,,3h
+TASK-9.1.5,Task,Admin panel testing,Test all CRUD operations in admin dashboard,,,qa;testing;admin,Sprint 4,,STORY-9.1,,2h
+TASK-9.1.6,Task,Performance testing,Run Lighthouse audits on all major pages,,,qa;testing;performance,Sprint 4,,STORY-9.1,,2h
+EPIC-10,Epic,Launch & Post-Launch,Final launch preparation and go-live,,,launch;production,,,,
+STORY-10.1,Story,Launch Preparation,"As the project team We need to prepare for launch So that the go-live is smooth. Acceptance Criteria: Launch checklist completed | Backup strategy in place | Rollback plan documented | Support process established | Launch communications prepared | Social media posts ready | Google My Business updated",8,Highest,launch;planning,Sprint 4,EPIC-10,,
+TASK-10.1.1,Task,Create launch checklist,Create final go-live verification checklist,,,launch;planning,Sprint 4,,STORY-10.1,,2h
+TASK-10.1.2,Task,Set up backup strategy,Configure automated backups for database and files,,,backup;deployment,Sprint 4,,STORY-10.1,,2h
+TASK-10.1.3,Task,Document rollback plan,Write step-by-step rollback procedure if issues occur,,,deployment;planning,Sprint 4,,STORY-10.1,,1h
+TASK-10.1.4,Task,Prepare launch communications,Draft email social media posts and press release,,,marketing;communications,Sprint 4,,STORY-10.1,,3h
+TASK-10.1.5,Task,Update Google My Business,Add new website URL to GMB listing,,,seo;marketing,Sprint 4,,STORY-10.1,,1h
+STORY-10.2,Story,Post-Launch Monitoring,"As the development team We need to monitor the site after launch So that we can quickly address any issues. Acceptance Criteria: 24-hour monitoring post-launch | Error logs reviewed | Performance metrics tracked | User feedback collected | Quick fixes deployed as needed | Success metrics documented",5,Highest,launch;monitoring,Sprint 4,EPIC-10,,
+TASK-10.2.1,Task,Monitor error logs,Check Sentry for errors during first 24 hours post-launch,,,monitoring;errors,Sprint 4,,STORY-10.2,,4h
+TASK-10.2.2,Task,Review analytics,Check GA4 for traffic patterns and conversions,,,analytics;monitoring,Sprint 4,,STORY-10.2,,2h
+TASK-10.2.3,Task,Collect user feedback,Gather feedback from staff and early customers,,,feedback,Sprint 4,,STORY-10.2,,2h
+TASK-10.2.4,Task,Address critical issues,Fix any urgent bugs discovered after launch,,,bug;hotfix,Sprint 4,,STORY-10.2,,4h
