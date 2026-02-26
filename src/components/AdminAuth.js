@@ -129,7 +129,7 @@ const AdminAuth = ({ children }) => {
 
         <div className="auth-info">
           <h3>ℹ️ First Time Here?</h3>
-          <p>Click "Create New Account" to set up your administrator credentials.</p>
+          <p>Click "Create New Account" if you have an invite code from your administrator.</p>
         </div>
       </div>
 

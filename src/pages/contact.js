@@ -12,6 +12,8 @@ const ContactPage = () => {
     phone: "",
     message: ""
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState("")
 
   const handleChange = (e) => {
     setFormData({
@@ -22,7 +24,9 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+    setIsSubmitting(true)
+    setSubmitError("")
+
     try {
       const response = await fetch("/.netlify/functions/send-email", {
         method: "POST",
@@ -31,12 +35,17 @@ const ContactPage = () => {
         },
         body: JSON.stringify(formData),
       })
-      
+
       if (response.ok) {
         navigate("/thank-you")
+      } else {
+        setSubmitError("Failed to send message. Please try again or contact us directly.")
       }
     } catch (error) {
       console.error("Error submitting form:", error)
+      setSubmitError("Failed to send message. Please try again or contact us directly.")
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -48,7 +57,7 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Call Us",
-      primary: "(555) 123-4567",
+      primary: "876 317-5375",
       secondary: "Sales & Service",
       action: "tel:5551234567"
     },
@@ -60,9 +69,9 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Email Us",
-      primary: "info@phaqui.com",
+      primary: "phacquimain@gmail.com",
       secondary: "Quick Response Guaranteed",
-      action: "mailto:info@phaqui.com"
+      action: "mailto:phacquimain@gmail.com"
     },
     {
       icon: (
@@ -72,9 +81,12 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Visit Us",
-      primary: "123 Auto Lane",
-      secondary: "Car City, CC 12345",
-      action: "#"
+      primary: "19 A South Road ",
+      secondary: "Kingston 10",
+      links: [
+        { label: "Apple Maps", url: "https://maps.apple.com/place?coordinate=18.000584,-76.796965&name=South%20Road&map=h" },
+        { label: "Google Maps", url: "https://maps.app.goo.gl/yxFCad5mJCMqHwpK7" }
+      ]
     },
     {
       icon: (
@@ -84,8 +96,8 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Business Hours",
-      primary: "Mon-Fri: 9AM-7PM",
-      secondary: "Sat-Sun: 10AM-6PM",
+      primary: "Mon-Fri: 8AM-5PM",
+      secondary: "Sat-Sun: Closed",
       action: "#"
     }
   ]
@@ -100,19 +112,9 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Vehicle Sales",
-      description: "New & pre-owned vehicles"
+      description: "Certified pre-owned vehicles"
     },
-    {
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-          <line x1="8" y1="21" x2="16" y2="21"/>
-          <line x1="12" y1="17" x2="12" y2="21"/>
-        </svg>
-      ),
-      title: "Financing",
-      description: "Competitive rates & terms"
-    },
+
     {
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -123,15 +125,15 @@ const ContactPage = () => {
       title: "Service & Repair",
       description: "Expert maintenance"
     },
-    {
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-      ),
-      title: "Warranties",
-      description: "Comprehensive protection"
-    }
+    //{
+    //  icon: (
+    //    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    //      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    //    </svg>
+    //  ),
+    //  title: "Warranties",
+    //  description: "Comprehensive protection"
+    //}
   ]
 
   return (
@@ -165,19 +167,43 @@ const ContactPage = () => {
           </div>
           <div className="methods-grid">
             {contactMethods.map((method, index) => (
-              <a 
-                key={index} 
-                href={method.action} 
-                className="method-card"
-                {...(method.action.startsWith('tel:') || method.action.startsWith('mailto:') ? {} : { onClick: (e) => e.preventDefault() })}
-              >
-                <div className="method-icon">
-                  {method.icon}
+              method.links ? (
+                <div key={index} className="method-card">
+                  <div className="method-icon">
+                    {method.icon}
+                  </div>
+                  <h3>{method.title}</h3>
+                  <p className="method-primary">{method.primary}</p>
+                  <p className="method-secondary">{method.secondary}</p>
+                  <div className="method-links">
+                    {method.links.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href={link.url}
+                        className="method-link-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
                 </div>
-                <h3>{method.title}</h3>
-                <p className="method-primary">{method.primary}</p>
-                <p className="method-secondary">{method.secondary}</p>
-              </a>
+              ) : (
+                <a
+                  key={index}
+                  href={method.action}
+                  className="method-card"
+                  {...(method.action.startsWith('tel:') || method.action.startsWith('mailto:') ? {} : { onClick: (e) => e.preventDefault() })}
+                >
+                  <div className="method-icon">
+                    {method.icon}
+                  </div>
+                  <h3>{method.title}</h3>
+                  <p className="method-primary">{method.primary}</p>
+                  <p className="method-secondary">{method.secondary}</p>
+                </a>
+              )
             ))}
           </div>
         </div>
@@ -270,12 +296,24 @@ const ContactPage = () => {
                   />
                 </div>
                 
-                <button type="submit" className="submit-button">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <line x1="22" y1="2" x2="11" y2="13"/>
-                    <polygon points="22,2 15,22 11,13 2,9 22,2"/>
-                  </svg>
-                  Send Message
+                {submitError && (
+                  <div className="form-error" style={{ color: "#dc3545", marginBottom: "1rem", padding: "0.75rem", backgroundColor: "#f8d7da", borderRadius: "4px" }}>
+                    {submitError}
+                  </div>
+                )}
+
+                <button type="submit" className="submit-button" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>Sending...</>
+                  ) : (
+                    <>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                      </svg>
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>

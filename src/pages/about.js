@@ -5,34 +5,14 @@ import heroCarImage from "../images/hero-car.png"
 
 const AboutPage = () => {
   const teamMembers = [
-    {
+   {/* {
       id: 1,
       name: "Michael Rodriguez",
       position: "Founder & CEO",
       bio: "With over 20 years in the automotive industry, Michael built PH Aqui from the ground up with a vision of premium customer service and transparent pricing.",
       expertise: "Business Strategy, Customer Relations"
     },
-    {
-      id: 2,
-      name: "Jennifer Chen",
-      position: "Sales Director",
-      bio: "Jennifer leads our sales team with expertise in matching customers with their perfect vehicles. Her consultative approach has earned her numerous industry awards.",
-      expertise: "Luxury Vehicle Sales, Customer Experience"
-    },
-    {
-      id: 3,
-      name: "David Thompson",
-      position: "Finance Manager",
-      bio: "David specializes in creating customized financing solutions that work for every budget. He's helped thousands of customers secure their ideal automotive financing.",
-      expertise: "Automotive Finance, Credit Solutions"
-    },
-    {
-      id: 4,
-      name: "Sarah Martinez",
-      position: "Service Manager",
-      bio: "Sarah oversees all after-sales services ensuring every customer receives exceptional support throughout their ownership experience.",
-      expertise: "Service Excellence, Quality Assurance"
-    },
+    */}
   ]
 
   const values = [
@@ -87,11 +67,11 @@ const AboutPage = () => {
           <div className="hero-text">
             <div className="hero-badge">Our Story</div>
             <h1>
-              Building Trust Through
-              <span className="hero-highlight"> Excellence</span>
+              Creating a Balance
+              <span className="hero-highlight"> for Life</span>
             </h1>
             <p>
-              Redefining the car buying experience with premium service and transparent pricing.
+              A small business with years of experience importing vehicles of all sizes — delivering quality and honest service you can trust.
             </p>
           </div>
           <div className="hero-image">
@@ -107,16 +87,17 @@ const AboutPage = () => {
             <div className="mission-card">
               <h2>Our Mission</h2>
               <p>
-                To revolutionize the automotive retail experience by providing exceptional service, 
-                premium quality vehicles, and transparent pricing that builds lasting relationships 
-                with our customers.
+                As a dedicated small business with years of experience importing vehicles of all sizes,
+                our mission is to help you find the perfect vehicle that fits your lifestyle and budget.
+                We believe in creating a balance for life — matching quality vehicles with honest service.
               </p>
             </div>
             <div className="mission-card">
               <h2>Our Vision</h2>
               <p>
-                To be the most trusted premium car dealership, known for integrity, innovation, 
-                and an unwavering commitment to customer satisfaction that sets the industry standard.
+                To be your trusted partner in vehicle imports, offering personalized service and
+                a diverse selection that larger dealers simply can't match. We're committed to
+                building lasting relationships, one satisfied customer at a time.
               </p>
             </div>
           </div>
@@ -144,7 +125,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - Disabled for now, enable later
+
       <section className="team-section">
         <div className="container">
           <div className="section-header">
@@ -172,6 +154,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Achievements */}
       <section className="achievements">
@@ -189,7 +172,7 @@ const AboutPage = () => {
                   <path d="m22 21-3-3m1-4a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/>
                 </svg>
               </div>
-              <h3>12,000+</h3>
+              <h3>300+</h3>
               <p>Happy Customers</p>
             </div>
             <div className="stat-item">
@@ -199,7 +182,7 @@ const AboutPage = () => {
                   <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
                 </svg>
               </div>
-              <h3>98%</h3>
+              <h3>95%</h3>
               <p>Customer Satisfaction</p>
             </div>
             <div className="stat-item">
@@ -209,19 +192,10 @@ const AboutPage = () => {
                   <path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5v0A5.5 5.5 0 0 0 9.5 20H13"/>
                 </svg>
               </div>
-              <h3>25</h3>
-              <p>Industry Awards</p>
+              <h3>20+</h3>
+              <p>Years of industry knowledge</p>
             </div>
-            <div className="stat-item">
-              <div className="stat-icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <h3>5</h3>
-              <p>Locations</p>
-            </div>
+
           </div>
         </div>
       </section>

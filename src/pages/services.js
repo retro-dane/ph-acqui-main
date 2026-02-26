@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import "../styles/services.css"
 import heroCarImage from "../images/hero-car.png"
@@ -9,105 +10,96 @@ const ServicesPage = () => {
       id: 1,
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M7 17h10l4-7H11l-1.5-3h-5l2 4z"/>
-          <circle cx="8.5" cy="19.5" r="1.5"/>
-          <circle cx="17.5" cy="19.5" r="1.5"/>
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
         </svg>
       ),
-      title: "Premium Vehicle Sales",
-      description: "Discover our curated collection of luxury and premium vehicles from the world's most prestigious manufacturers.",
+      title: "Vehicle Sourcing",
+      description: "We help you find the perfect vehicle from trusted international markets. Cars, trucks, buses — we source vehicles of all sizes to meet your needs.",
       features: [
-        "Certified pre-owned vehicles",
-        "New luxury vehicle sales",
-        "Competitive trade-in evaluations",
-        "Extended warranty options",
-        "Comprehensive vehicle history reports"
+        "Access to international markets",
+        "Vehicles of all sizes available",
+        "Quality verification before purchase",
+        "Transparent pricing guidance",
+        "Personalized vehicle matching"
       ],
-      highlight: "Over 500+ Premium Vehicles"
+      highlight: "All Vehicle Types & Sizes"
     },
     {
       id: 2,
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-          <line x1="8" y1="21" x2="16" y2="21"/>
-          <line x1="12" y1="17" x2="12" y2="21"/>
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
         </svg>
       ),
-      title: "Flexible Financing",
-      description: "Tailored financing solutions designed to make your dream vehicle affordable with competitive rates and flexible terms.",
+      title: "Fee Advisory",
+      description: "Navigate Jamaica's import fees and duties with confidence. We provide clear guidance on all costs so there are no surprises.",
       features: [
-        "0.9% APR financing available",
-        "Lease-to-own programs",
-        "Bad credit specialists",
-        "Same-day approval process",
-        "Personalized payment plans"
+        "Import duty calculations",
+        "GCT and SCT breakdowns",
+        "Environmental levy guidance",
+        "Total landed cost estimates",
+        "Budget planning assistance"
       ],
-      highlight: "Financing from 0.9% APR"
+      highlight: "No Hidden Costs"
     },
     {
       id: 3,
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
         </svg>
       ),
-      title: "Expert Maintenance",
-      description: "State-of-the-art service center with factory-trained technicians ensuring your vehicle performs at its peak.",
+      title: "After-Purchase Maintenance",
+      description: "Your journey doesn't end at purchase. We provide ongoing maintenance services to keep your imported vehicle running smoothly.",
       features: [
-        "Manufacturer warranty service",
-        "Advanced diagnostic equipment",
-        "Genuine OEM parts",
-        "Express service options",
-        "Detailed service reporting"
+        "Regular servicing",
+        "Parts sourcing assistance",
+        "Mechanical repairs",
+        "Trusted mechanic network"
       ],
-      highlight: "Factory-Certified Technicians"
+      highlight: "Ongoing Support"
     },
     {
       id: 4,
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
         </svg>
       ),
-      title: "Comprehensive Protection",
-      description: "Complete peace of mind with our comprehensive protection plans and insurance services tailored to your needs.",
+      title: "Import Documentation",
+      description: "We handle all the paperwork so you don't have to. From import licenses to registration, we make the process seamless.",
       features: [
-        "Extended warranty coverage",
-        "Gap insurance protection",
-        "24/7 roadside assistance",
-        "Theft and damage protection",
-        "Maintenance plan packages"
+        "Import license acquisition",
+        "Vehicle registration assistance",
+        "Licensing paperwork",
+        "Fitness certificate coordination",
+        "Customs clearance support"
       ],
-      highlight: "24/7 Support Available"
+      highlight: "Hassle-Free Paperwork"
     }
   ]
 
   const specialtyServices = [
     {
-      title: "Vehicle Detailing",
-      description: "Professional detailing services",
+      title: "Port Pickup",
+      description: "Collection from Kingston ports",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 6v6l4 2"/>
-        </svg>
-      )
-    },
-    {
-      title: "Vehicle Customization",
-      description: "Personalize your vehicle",
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M12 20h9"/>
-          <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          <rect x="1" y="3" width="15" height="13"/>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
         </svg>
       )
     },
     {
       title: "Vehicle Inspection",
-      description: "Comprehensive safety checks",
+      description: "Pre-purchase quality checks",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M9 12l2 2 4-4"/>
@@ -116,31 +108,42 @@ const ServicesPage = () => {
       )
     },
     {
-      title: "Trade-In Evaluation",
-      description: "Fair market value assessments",
+      title: "Shipping Coordination",
+      description: "International logistics support",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="m15 14 5-5-5-5"/>
-          <path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5v0A5.5 5.5 0 0 0 9.5 20H13"/>
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
       )
     },
     {
-      title: "Delivery Service",
-      description: "Convenient vehicle delivery",
+      title: "Island Delivery",
+      description: "Delivery across Jamaica",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
         </svg>
       )
     },
     {
-      title: "Insurance Services",
-      description: "Comprehensive coverage options",
+      title: "Parts Sourcing",
+      description: "Hard-to-find replacement parts",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M9 12l2 2 4-4"/>
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      )
+    },
+    {
+      title: "Consultation",
+      description: "Free import advice",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
       )
     }
@@ -152,13 +155,13 @@ const ServicesPage = () => {
       <section className="services-hero">
         <div className="services-hero-content">
           <div className="hero-text">
-            <div className="hero-badge">Comprehensive Solutions</div>
+            <div className="hero-badge">Jamaica's Trusted Importer</div>
             <h1>
-              Premium Automotive
+              Vehicle Import
               <span className="hero-highlight"> Services</span>
             </h1>
             <p>
-              Complete automotive solutions designed to exceed your expectations.
+              From sourcing to registration — we handle every step of your vehicle import journey.
             </p>
           </div>
           <div className="hero-image">
@@ -172,7 +175,7 @@ const ServicesPage = () => {
         <div className="container">
           <div className="section-header">
             <h2>Our Core Services</h2>
-            <p>Comprehensive automotive solutions tailored to your needs</p>
+            <p>Everything you need for a smooth vehicle import experience</p>
           </div>
           <div className="services-grid">
             {mainServices.map(service => (
@@ -203,8 +206,8 @@ const ServicesPage = () => {
       <section className="specialty-services">
         <div className="container">
           <div className="section-header">
-            <h2>Specialty Services</h2>
-            <p>Additional services to enhance your automotive experience</p>
+            <h2>Additional Services</h2>
+            <p>Extra support to make your import journey easier</p>
           </div>
           <div className="specialty-grid">
             {specialtyServices.map((service, index) => (
@@ -224,29 +227,29 @@ const ServicesPage = () => {
       <section className="process-section">
         <div className="container">
           <div className="section-header">
-            <h2>Our Service Process</h2>
-            <p>A seamless experience from start to finish</p>
+            <h2>How It Works</h2>
+            <p>Your vehicle import journey made simple</p>
           </div>
           <div className="process-grid">
             <div className="process-step">
               <div className="step-number">1</div>
               <h3>Consultation</h3>
-              <p>We listen to your needs and preferences to understand exactly what you're looking for.</p>
+              <p>Tell us what you're looking for — vehicle type, budget, and preferences. We'll guide you through your options.</p>
             </div>
             <div className="process-step">
               <div className="step-number">2</div>
-              <h3>Selection</h3>
-              <p>Browse our curated inventory or let our experts help you find the perfect vehicle.</p>
+              <h3>Sourcing</h3>
+              <p>We search international markets to find quality vehicles that match your requirements and budget.</p>
             </div>
             <div className="process-step">
               <div className="step-number">3</div>
-              <h3>Financing</h3>
-              <p>Get pre-approved with competitive rates and flexible terms that work for your budget.</p>
+              <h3>Import & Paperwork</h3>
+              <p>We handle shipping, customs clearance, import licenses, and all documentation on your behalf.</p>
             </div>
             <div className="process-step">
               <div className="step-number">4</div>
-              <h3>Delivery</h3>
-              <p>Complete your purchase and drive away in your new vehicle with full confidence.</p>
+              <h3>Registration & Delivery</h3>
+              <p>We complete vehicle registration, licensing, and fitness certification — then deliver your vehicle ready to drive.</p>
             </div>
           </div>
         </div>
@@ -256,14 +259,13 @@ const ServicesPage = () => {
       <section className="services-cta">
         <div className="container">
           <div className="cta-content">
-            <h2>Ready to Experience Premium Service?</h2>
+            <h2>Ready to Import Your Next Vehicle?</h2>
             <p>
-              Schedule a consultation with our automotive experts and discover how we can 
-              exceed your expectations at every step of your journey.
+              Get in touch for a free consultation. We'll help you understand the process,
+              estimate costs, and find the perfect vehicle for your needs.
             </p>
             <div className="cta-buttons">
-              <button className="cta-primary">Schedule Consultation</button>
-              <button className="cta-secondary">Browse Inventory</button>
+              <Link to="/contact" className="cta-secondary">Contact Us</Link>
             </div>
           </div>
         </div>

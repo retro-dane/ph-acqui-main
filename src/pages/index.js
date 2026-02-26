@@ -13,14 +13,14 @@ const IndexPage = () => {
       <section className="hero">
         <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-badge">Premium Car Dealership</div>
+            <div className="hero-badge">Trusted Car Dealership</div>
             <h1>
               <span className="hero-highlight">Find Your</span>
               <br />
               Perfect Car Today
             </h1>
             <p className="subtitle">
-              Discover premium vehicles with transparent pricing, expert service, and financing options tailored just for you.
+              Discover affordable vehicles with transparent pricing, expert service, and financing options tailored just for you.
             </p>
             <div className="hero-buttons">
               <Link to="/inventory" className="btn-primary">Browse Inventory</Link>
@@ -31,7 +31,7 @@ const IndexPage = () => {
             <div className="image-overlay"></div>
             <img
               src={heroCarImage}
-              alt="Premium luxury cars"
+              alt="Premium affordable cars"
               className="hero-img"
             />
             <div className="hero-stats">
@@ -85,7 +85,7 @@ const IndexPage = () => {
                 </svg>
               </div>
               <h3>Fast & Easy Process</h3>
-              <p>Streamlined paperwork and financing options to get you driving in no time</p>
+              <p>Streamlined paperwork to get you driving in no time</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -113,7 +113,6 @@ const IndexPage = () => {
             </p>
             <div className="cta-buttons">
               <Link to="/inventory" className="btn-primary">View Inventory</Link>
-              <Link to="/contact" className="btn-outline">Get Pre-Approved</Link>
             </div>
           </div>
         </div>

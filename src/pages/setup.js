@@ -3,6 +3,7 @@ import { createUser } from '../utils/authHelper'
 import Layout from '../components/Layout'
 
 const SetupPage = () => {
+  const [inviteCode, setInviteCode] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -12,10 +13,20 @@ const SetupPage = () => {
   const [success, setSuccess] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  // Invite code from environment variable
+  const VALID_INVITE_CODE = process.env.GATSBY_ADMIN_INVITE_CODE || 'PHAQUI2024'
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
     setIsSubmitting(true)
+
+    // Validate invite code first
+    if (inviteCode.trim().toUpperCase() !== VALID_INVITE_CODE.toUpperCase()) {
+      setError('Invalid invite code. Please contact your administrator for access.')
+      setIsSubmitting(false)
+      return
+    }
 
     // Validation
     if (username.length < 3) {
@@ -80,6 +91,21 @@ const SetupPage = () => {
           ) : (
             <form onSubmit={handleSubmit} className="setup-form">
               {error && <div className="error-message">{error}</div>}
+
+              <div className="form-group invite-code-group">
+                <label htmlFor="inviteCode">Invite Code *</label>
+                <input
+                  type="text"
+                  id="inviteCode"
+                  value={inviteCode}
+                  onChange={(e) => setInviteCode(e.target.value.toUpperCase())}
+                  placeholder="Enter your invite code"
+                  required
+                  disabled={isSubmitting}
+                  autoComplete="off"
+                />
+                <small>Contact your administrator if you don't have an invite code</small>
+              </div>
 
               <div className="form-group">
                 <label htmlFor="username">Username *</label>
@@ -162,10 +188,9 @@ const SetupPage = () => {
           <div className="setup-info">
             <h3>📝 Important Notes:</h3>
             <ul>
-              <li>This is a one-time setup page for creating admin accounts</li>
-              <li>Keep your credentials secure</li>
-              <li>You can create multiple admin accounts using this page</li>
-              <li>Each account will have full administrative access</li>
+              <li>You need a valid invite code from your administrator to create an account</li>
+              <li>Keep your credentials secure — do not share your login details</li>
+              <li>Each account will have full administrative access to manage inventory</li>
             </ul>
           </div>
         </div>
@@ -246,6 +271,20 @@ const SetupPage = () => {
             margin-top: 6px;
             color: #718096;
             font-size: 0.85rem;
+          }
+
+          .invite-code-group {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px dashed #667eea;
+            margin-bottom: 30px;
+          }
+
+          .invite-code-group input {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
           }
 
           .error-message {
