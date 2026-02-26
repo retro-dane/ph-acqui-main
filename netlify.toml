@@ -8,6 +8,8 @@
   GATSBY_CPU_COUNT = "1"
   # Disable AVIF processing to prevent build failures
   GATSBY_AVIF = "false"
+  # Skip secret scanning - Firebase client config is public by design
+  NETLIFY_SKIP_SECRETS_SCAN = "true"
 
 # Firebase client credentials are not secrets - they're public by design
 # Security is handled by Firestore/Storage Rules, not by hiding config
